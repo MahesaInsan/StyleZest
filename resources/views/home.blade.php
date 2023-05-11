@@ -16,7 +16,11 @@
                     @endif
                     
                     {{ __('You are logged in!') }}
+                    @if (Auth::user()->address == null)
+                        
+                    @endif
                 </div>
+                    
             </div>
         </div>
     </div>

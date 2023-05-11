@@ -98,7 +98,7 @@
             <div id="image-placeholder" class="border" style="height:20%">
                 <img src="" alt="" class="">
             </div>
-            <main class="col-md-10 offset-md-1 border border-danger" style="height:80%">
+            <main class="col-md-10 offset-md-1 border" style="height:84%; margin-top:-2%; background-color:white">
                 @yield('content')
             </main>
         </div>

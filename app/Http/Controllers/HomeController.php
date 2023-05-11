@@ -3,6 +3,11 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Models\Clothes;
+use App\Models\color;
+use App\Models\Gender;
+use App\Models\Categories;
+use App\Models\Size;
 
 class HomeController extends Controller
 {
@@ -25,7 +30,14 @@ class HomeController extends Controller
     {
         return view('home');
     }
+    
     public function adminHome(){
-        return view('admin.adminhome');
+        $clothes = Clothes::all();
+        $colors = color::all();
+        $genders = Gender::all();
+        $categories = Categories::all();
+        $sizes = Size::all();
+
+        return view('admin.adminhome', ['clothes' => $clothes, 'colors' => $colors, 'genders' => $genders, 'categories' => $categories, 'sizes' => $sizes]);
     }
 }
