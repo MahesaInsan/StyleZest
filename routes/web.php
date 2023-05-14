@@ -39,3 +39,6 @@ Route::get('/admin/editclothes/{id}', [App\Http\Controllers\ClothesController::c
 Route::put('/admin/editclothes/{id}', [App\Http\Controllers\ClothesController::class, 'updateClothes']);
 
 Route::delete('/admin/deleteclothes/{id}', [App\Http\Controllers\ClothesController::class, 'deleteClothes']);
+
+Route::get('/admin/index_product', [\App\Http\Controllers\ProductController::class], 'DescriptionP');
+// Route::Get('/admin/clothesDescription', [App\Http\Controllers\ClothesController::class, ''])

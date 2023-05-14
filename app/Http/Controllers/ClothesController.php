@@ -95,4 +95,5 @@ class ClothesController extends Controller
         return redirect()->back()->with('success', 'Clothes deleted successfully');
     }
     
+    
 }
