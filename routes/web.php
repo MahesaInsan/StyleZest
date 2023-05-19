@@ -57,7 +57,6 @@ Route::get('/admin/editcategories/{id}', [App\Http\Controllers\CategoriesControl
 Route::put('/admin/editcategories/{id}', [App\Http\Controllers\CategoriesController::class, 'updateCategories']);
 Route::delete('/admin/deletecategories/{id}', [App\Http\Controllers\CategoriesController::class, 'deleteCategories']);
 
-
 /* User Page -> Buy section */
 Route::get('buyclothes/{id}', [App\Http\Controllers\ClothesController::class, 'buyClothes']);
 

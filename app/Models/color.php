@@ -12,4 +12,5 @@ class color extends Model
     public function clothes(){
         return $this->belongsToMany(Clothes::class, 'Clothes_has__Colors', 'colorId', 'clothesId');
     }
+    public $timestamps = false;
 }
