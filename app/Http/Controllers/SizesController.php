@@ -4,12 +4,12 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Size;
-use App\Models\Clothes_has_Sizes
+use App\Models\Clothes_has_Sizes;
 
 class SizesController extends Controller
 {
     //
     public function getSize(){
-        $
+
     }
 }

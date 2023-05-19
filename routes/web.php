@@ -29,6 +29,7 @@ Route::get('/box', function () {
     return view('layouts.box');
 });
 
+/* Admin Page -> Clothes section */
 Route::get('/admin/home', [App\Http\Controllers\HomeController::class, 'adminHome'])->name('adminhome')->middleware('isAdmin');
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 
@@ -40,5 +41,24 @@ Route::put('/admin/editclothes/{id}', [App\Http\Controllers\ClothesController::c
 
 Route::delete('/admin/deleteclothes/{id}', [App\Http\Controllers\ClothesController::class, 'deleteClothes']);
 
-Route::get('/admin/index_product', [\App\Http\Controllers\ProductController::class], 'DescriptionP');
+//color's route
+Route::get('/admin/color', [App\Http\Controllers\HomeController::class, 'adminColor'])->name('adminColor');
+Route::get('/admin/addcolor', [App\Http\Controllers\ColorsController::class, 'addColors'])->name('addColors');
+Route::post('/admin/addcolor', [App\Http\Controllers\ColorsController::class, 'saveColors']);
+Route::get('/admin/editcolors/{id}', [App\Http\Controllers\ColorsController::class, 'editColors']);
+Route::put('/admin/editcolors/{id}', [App\Http\Controllers\ColorsController::class, 'updateColors']);
+Route::delete('/admin/deletecolors/{id}', [App\Http\Controllers\ColorsController::class, 'deleteColors']);
+
+//category's route
+Route::get('/admin/category', [App\Http\Controllers\HomeController::class, 'adminCategory'])->name('adminCategory');
+Route::get('/admin/addcategory', [App\Http\Controllers\CategoriesController::class, 'addCategories'])->name('addCategories');
+Route::post('/admin/addcategory', [App\Http\Controllers\CategoriesController::class, 'saveCategories']);
+Route::get('/admin/editcategories/{id}', [App\Http\Controllers\CategoriesController::class, 'editCategories']);
+Route::put('/admin/editcategories/{id}', [App\Http\Controllers\CategoriesController::class, 'updateCategories']);
+Route::delete('/admin/deletecategories/{id}', [App\Http\Controllers\CategoriesController::class, 'deleteCategories']);
+
+
+/* User Page -> Buy section */
+Route::get('buyclothes/{id}', [App\Http\Controllers\ClothesController::class, 'buyClothes']);
+
 // Route::Get('/admin/clothesDescription', [App\Http\Controllers\ClothesController::class, ''])
