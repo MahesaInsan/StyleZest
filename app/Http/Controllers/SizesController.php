@@ -3,8 +3,8 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\Http\Controllers\HomeController;
 use App\Models\Size;
+use App\Models\Clothes_has_Sizes;
 
 class SizesController extends Controller
 {

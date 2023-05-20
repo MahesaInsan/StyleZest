@@ -28,7 +28,13 @@ class HomeController extends Controller
      */
     public function index()
     {
-        return view('home');
+        $clothes = Clothes::all();
+        $colors = color::all();
+        $genders = Gender::all();
+        $categories = Categories::all();
+        $sizes = Size::all();
+
+        return view('home', ['categories' => $categories])->with('colors', $colors)->with('genders', $genders)->with('sizes', $sizes)->with('clothes', $clothes);
     }
     
     public function adminHome(){
@@ -47,4 +53,15 @@ class HomeController extends Controller
         return view('admin.sizeindex', ['sizes' => $sizes]);
     }
 
+    public function adminColor(){
+        $colors = color::all();
+
+        return view('admin.colorindex', ['colors' => $colors]);
+    }
+
+    public function adminCategory(){
+        $categories = Categories::all();
+
+        return view('admin.categoryindex', ['categories' => $categories]);
+    }
 }

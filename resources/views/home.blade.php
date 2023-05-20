@@ -1,28 +1,20 @@
-@extends('layouts.app')
-
-@section('content')
-<div class="container">
-    <div class="row justify-content-center">
-        <div class="col-md-8">
-            <div class="card">
-                <div class="card-header">{{ __('Dashboard') }}</div>
-
-                <div class="card-body">
-                    @if (session('status'))
-                        <div class="alert alert-success" role="alert">
-                            {{ session('status') }}
+    @extends('layouts.userbox')
+        
+    @section('userbox-content')
+        <div class="card-group">
+            <div class="flex-row"></div>
+                @foreach ($clothes as $cl)
+                    <div class="col-4">
+                        <div class="card m-2">
+                            <img class="card-img-top" src="{{$cl->image}}" alt="clothes image {{$cl->id}}">
+                            <div class="card-body">
+                                <h5 class="card-title">{{$cl->clothesName}}</h5>
+                                <p class="card-text">Rp. {{$cl->price}}</p>
+                                <a class="btn" href="/buyclothes/{{$cl->id}}">Buy</a>
+                            </div>  
                         </div>
-                        
-                    @endif
-                    
-                    {{ __('You are logged in!') }}
-                    @if (Auth::user()->address == null)
-                        
-                    @endif
-                </div>
-                    
+                    </div>
+                @endforeach
             </div>
         </div>
-    </div>
-</div>
 @endsection
