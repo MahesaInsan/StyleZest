@@ -10,7 +10,7 @@
     </div>        
     <div class="body d-flex flex-column gap-4">
         <div id="name">
-            <p class=" mb-1"> Name of the Size:</p>
+            <p class=" mb-1">Size Code:</p>
             <input type="text" name="sizeName" id="" class="form-control" value="{{$size->sizeName}}">
         </div>
         <div id="description">

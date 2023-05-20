@@ -11,7 +11,7 @@
     <tbody>
         @foreach ($sizes as $sz)
             <tr>
-                <td>{{$sz->sizeName}}</td>
+                <td>{{$sz->sizeCode}}</td>
                 <td>{{$sz->sizeDesc}}</td>
                 <td><a href="/admin/editsizes/{{$sz->id}}">Edit</a></td>
                 <td>
