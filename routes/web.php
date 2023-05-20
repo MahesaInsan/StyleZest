@@ -39,3 +39,12 @@ Route::get('/admin/editclothes/{id}', [App\Http\Controllers\ClothesController::c
 Route::put('/admin/editclothes/{id}', [App\Http\Controllers\ClothesController::class, 'updateClothes']);
 
 Route::delete('/admin/deleteclothes/{id}', [App\Http\Controllers\ClothesController::class, 'deleteClothes']);
+
+//Size's route
+Route::get('/admin/sizeindex', [App\Http\Controllers\HomeController::class, 'showsize']);
+Route::get('/admin/addsize', [App\Http\Controllers\SizesController::class, 'addSizes'])->name('addSizes');
+Route::post('/admin/addsize', [App\Http\Controllers\SizesController::class, 'saveSizes']);
+Route::get('/admin/editsizes/{id}', [App\Http\Controllers\SizesController::class, 'editSizes']);
+Route::put('/admin/editsizes/{id}', [App\Http\Controllers\SizesController::class, 'updateSizes']);
+Route::delete('/admin/deletesizes/{id}', [App\Http\Controllers\SizesController::class, 'deleteSizes']);
+

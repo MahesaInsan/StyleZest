@@ -40,4 +40,11 @@ class HomeController extends Controller
 
         return view('admin.adminhome', ['clothes' => $clothes, 'colors' => $colors, 'genders' => $genders, 'categories' => $categories, 'sizes' => $sizes]);
     }
+
+    public function showsize(){
+        $sizes = Size::all();
+        
+        return view('admin.sizeindex', ['sizes' => $sizes]);
+    }
+
 }

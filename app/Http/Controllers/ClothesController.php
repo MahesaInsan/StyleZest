@@ -10,7 +10,7 @@ use App\Models\Gender;
 use App\Models\Categories;
 use App\Models\Clothes_has_Colors;
 use App\Models\Clothes_has_Sizes;
-use App\Models\Size;
+use App\Models\Size;        
 
 
 class ClothesController extends Controller
