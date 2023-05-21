@@ -31,7 +31,11 @@
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
                     <!-- Left Side Of Navbar -->
                     <ul class="navbar-nav me-auto">
-
+                        @if (Auth::user()->isAdmin == 1)
+                        <li class="nav-item">
+                            <a href="{{ route('users.index') }}" class="nav-link">User</a>
+                        </li>
+                    @endif
                     </ul>
 
                     <!-- Right Side Of Navbar -->
@@ -63,8 +67,12 @@
 
                                 <div class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
                                     @if (Auth::user()->isAdmin == 0)
-                                        <a class="dropdown-item" href="">
+                                        <a class="dropdown-item" href="{{ route('admin.edit-profile') }}">
                                             Edit Profile
+                                        </a>
+
+                                        <a class="dropdown-item" href="{{ route('admin.edit-password') }}">
+                                            Edit Password
                                         </a>
                                         <a class="dropdown-item" href="{{ route('logout') }}"
                                         onclick="event.preventDefault();
@@ -76,6 +84,13 @@
                                             @csrf
                                         </form>
                                     @else
+                                        <a class="dropdown-item" href="{{ route('admin.edit-profile') }}">
+                                            Edit Profile
+                                        </a>
+
+                                        <a class="dropdown-item" href="{{ route('admin.edit-password') }}">
+                                            Edit Password
+                                        </a>
                                         <a class="dropdown-item" href="{{ route('logout') }}"
                                         onclick="event.preventDefault();
                                                         document.getElementById('logout-form').submit();">
