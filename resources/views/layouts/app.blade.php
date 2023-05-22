@@ -32,9 +32,9 @@
                     <!-- Left Side Of Navbar -->
                     <ul class="navbar-nav me-auto">
                         @if (Auth::user()->isAdmin == 1)
-                        <li class="nav-item">
+                        {{-- <li class="nav-item">
                             <a href="{{ route('users.index') }}" class="nav-link">User</a>
-                        </li>
+                        </li> --}}
                     @endif
                     </ul>
 
@@ -92,6 +92,10 @@
 
                                         <a class="dropdown-item" href="{{ route('admin.edit-password') }}">
                                             Edit Password
+                                        </a>
+
+                                        <a class="dropdown-item" href="{{ route('users.index') }}">
+                                            Account panel
                                         </a>
                                         <a class="dropdown-item" href="{{ route('logout') }}"
                                         onclick="event.preventDefault();
