@@ -3,12 +3,12 @@
 @section('content')
 @csrf
     <div class="row p-4 h-100">
-        <div class="col h-100">
+        <div class="col">
             <div class="h-75">
-                <img src="" alt="">
-            </div>
-            <h5 class="fw-bold" style="font-size: 1.25rem">{{$clothes->clothesName}}</h5>
-            <p style="font-size: 1rem">{{$clothes->clothesDescription}}</p>
+                    <img src="{{ asset('storage/images/clothes/'. $clothes->image) }}" alt="" style="max-width:100%; max-height:75%;">
+                </div>
+                <h5 class="fw-bold" style="font-size: 1.25rem">{{$clothes->clothesName}}</h5>
+                <p style="font-size: 1rem">{{$clothes->clothesDescription}}</p>
         </div>
         <div class="col h-100">
             <div class="d-flex flex-column justify-content-between h-100">

@@ -6,7 +6,7 @@
                 @foreach ($clothes as $cl)
                     <div class="col-4">
                         <div class="card m-2">
-                            <img class="card-img-top" src="{{$cl->image}}" alt="clothes image {{$cl->id}}">
+                            <img class="card-img-top" src="{{ asset('storage/images/clothes/'. $cl->image) }}" alt="clothes image {{$cl->id}}">
                             <div class="card-body">
                                 <h5 class="card-title">{{$cl->clothesName}}</h5>
                                 <p class="card-text">Rp. {{$cl->price}}</p>
