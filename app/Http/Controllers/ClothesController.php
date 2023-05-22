@@ -10,7 +10,7 @@ use App\Models\Gender;
 use App\Models\Categories;
 use App\Models\Clothes_has_Colors;
 use App\Models\Clothes_has_Sizes;
-use App\Models\Size;
+use App\Models\Size;        
 
 
 class ClothesController extends Controller
@@ -75,7 +75,7 @@ class ClothesController extends Controller
     }
 
     public function updateClothes($id, Request $request){
-        $clothes = Clothes:: find($id);
+        $clothes = Clothes::find($id);
 
         $clothes->clothesName = $request->inName;
         $clothes->clothesDescription = $request->inDesc;
@@ -95,5 +95,18 @@ class ClothesController extends Controller
         return redirect()->back()->with('success', 'Clothes deleted successfully');
     }
     
-    
+    public function buyClothes($id){
+        $clothes = Clothes::find($id);
+        $gender = Gender::find($clothes->genderId);
+        
+        /* foreach ($colors as $color) {
+            $colorCodes = $color->colorcode;
+        } */
+
+        /* foreach ($sizes as $size){
+            $sizeCodes = $size->sizeCode;
+        } */
+        
+        return view('buyclothes', ['clothes' => $clothes, 'gender' => $gender]);
+    }
 }
