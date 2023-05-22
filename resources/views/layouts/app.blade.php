@@ -67,6 +67,7 @@
 
                                 <div class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
                                     @if (Auth::user()->isAdmin == 0)
+                                    {{-- edit profile and password section --}}
                                         <a class="dropdown-item" href="{{ route('admin.edit-profile') }}">
                                             Edit Profile
                                         </a>
@@ -84,6 +85,7 @@
                                             @csrf
                                         </form>
                                     @else
+                                        {{-- edit profile and password (admin) --}}
                                         <a class="dropdown-item" href="{{ route('admin.edit-profile') }}">
                                             Edit Profile
                                         </a>

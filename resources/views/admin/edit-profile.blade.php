@@ -1,3 +1,4 @@
+{{-- Profile content --}}
 @extends('layouts.box')
 
 @section('box-content')

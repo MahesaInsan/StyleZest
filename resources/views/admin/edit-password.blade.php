@@ -1,3 +1,4 @@
+{{-- Password content --}}
 @extends('layouts.box')
 
 @section('box-content')

@@ -8,7 +8,8 @@ use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Hash;
 
 class UserController extends Controller
-{
+{   
+    // aaa
     public function index()
     {
         $users = User::all();
