@@ -16,7 +16,7 @@
                 <span class="text-secondary">Write down your new password</span>
             </div>
 
-            <input type="submit" class="button btn btn-primary" value="Add Clothes">
+            <input type="submit" class="button btn btn-primary" value="Update Password">
         </div>
     </form>
 @endsection

@@ -30,7 +30,7 @@
                 <textarea name="address" id="address" cols="30" rows="5" class="form-control">{{ Auth::user()->address }}</textarea>
             </div>
 
-            <input type="submit" class="button btn btn-primary" value="Add Clothes">
+            <input type="submit" class="button btn btn-primary" value="Update Profile">
         </div>
     </form>
 @endsection
