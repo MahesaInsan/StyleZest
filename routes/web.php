@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\UserController;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 
@@ -41,6 +42,12 @@ Route::put('/admin/editclothes/{id}', [App\Http\Controllers\ClothesController::c
 
 Route::delete('/admin/deleteclothes/{id}', [App\Http\Controllers\ClothesController::class, 'deleteClothes']);
 
+// Route::get('/admin/index_product', [\App\Http\Controllers\ProductController::class], 'DescriptionP');
+
+
+Route::resource('admin/users', UserController::class);
+Route::get('admin/edit-profile', [UserController::class, 'edit_profile'])->middleware('auth')->name('admin.edit-profile');
+Route::get('admin/edit-password', [UserController::class, 'edit_password'])->middleware('auth')->name('admin.edit-password');
 //Size's route
 Route::get('/admin/sizeindex', [App\Http\Controllers\HomeController::class, 'showsize']);
 Route::get('/admin/addsize', [App\Http\Controllers\SizesController::class, 'addSizes'])->name('addSizes');
