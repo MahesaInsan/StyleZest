@@ -11,7 +11,7 @@ class SizesController extends Controller
 {
     //
     public function getSize(){
-        $
+        //$
     }
 }
 
