@@ -8,6 +8,7 @@ use App\Models\Clothes_has_Sizes;
 
 class SizesController extends Controller
 {
+    //show all data about size
     public function showsize(){
         $sizes = Size::all();
         
