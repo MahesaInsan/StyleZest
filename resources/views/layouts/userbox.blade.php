@@ -14,7 +14,7 @@
                     @endforeach
                 </ul>
             </div> --}}
-            <div class="accordion" id="accordionExample">
+            <div class="accordion accordion-flush" id="accordionExample" style="background: white">
                 <div class="accordion-item">
                   <h2 class="accordion-header" id="collapseCategories">
                     <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
@@ -59,7 +59,7 @@
                 </div>
             </div>
         </div>
-        <div class="col-9 overflow-auto mh-100">
+        <div class="col-9" style="overflow-y:auto; max-height:90%">
             @yield('userbox-content')
         </div>
     </div>
