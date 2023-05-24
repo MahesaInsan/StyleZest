@@ -4,7 +4,7 @@
         <div class="card-group">
             <div class="flex-row"></div>
                 @foreach ($clothes as $cl)
-                    <div class="col-4">
+                    <div class="col-sm-6 col-md-4">
                         <div class="card m-2">
                             <img class="card-img-top" src="{{ asset('storage/images/clothes/'. $cl->image) }}" alt="clothes image {{$cl->id}}">
                             <div class="card-body">

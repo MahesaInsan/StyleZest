@@ -28,7 +28,7 @@
 </head>
 <body class="h-100">
     <div id="app" class="h-100 d-flex flex-column">
-        <nav class="navbar navbar-expand-md navbar-light shadow-sm" style="background-color: #3AAFA9; min-height:5%;">
+        <nav class="navbar navbar-expand-md navbar-light shadow-sm" style="background-color: #3AAFA9; height:5%;">
             <div class="container">
                 <a class="navbar-brand" href="{{ url('/') }}">
                     {{-- {{ config('app.name', 'Laravel') }} --}} StyleZest
@@ -124,11 +124,11 @@
             </div>
         </nav>
 
-        <div id="content-layout" class="h-100">
+        <div id="content-layout" class="d-flex flex-column" style="height:95%">
             <div id="image-placeholder" class="border" style="height:20%">
                 <img src="" alt="" class="">
             </div>
-            <main class="col-md-10 offset-md-1 border" style="height:84%; margin-top:-2%; background-color:white">
+            <main class="col-md-10 offset-md-1 border flex-grow-1" style="margin-top:-2%; background-color:white;">
                 @yield('content')
             </main>
         </div>
