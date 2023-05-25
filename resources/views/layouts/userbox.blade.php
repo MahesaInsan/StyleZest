@@ -22,7 +22,7 @@
                     @endforeach
                 </ul>
             </div> --}}
-            <div class="accordion accordion-flush pt-1" id="accordionExample" style="background: white">
+            <div class="accordion accordion-flush pt-1 fs-6" id="accordionExample" style="background: white">
                 <div class="accordion-item">
                   <h2 class="accordion-header" id="collapseCategories">
                     <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
@@ -32,7 +32,7 @@
                   <div id="collapseOne" class="accordion-collapse collapse show" aria-labelledby="headingOne" >
                     <div class="accordion-body">
                         @foreach ($categories as $category)
-                        <li><a href="#">{{$category->categoryName}}</a></li>
+                        <li class="list-unstyled ps-3"><a href="#" class="text-decoration-none">{{$category->categoryName}}</a></li>
                         @endforeach
                     </div>
                   </div>
@@ -46,7 +46,7 @@
                   <div id="collapseTwo" class="accordion-collapse collapse" aria-labelledby="headingTwo" >
                     <div class="accordion-body">
                       @foreach ($genders as $gender)
-                        <li><a href="#">{{$gender->genderName}}</a></li>
+                        <li class="list-unstyled ps-3"><a href="#" class="text-decoration-none">{{$gender->genderName}}</a></li>
                       @endforeach
                     </div>
                   </div>
@@ -60,14 +60,14 @@
                   <div id="collapseThree" class="accordion-collapse collapse" aria-labelledby="headingThree">
                     <div class="accordion-body">
                       @foreach ($sizes as $size)
-                        <li><a href="#">{{$size->sizeCode}}</a></li>
+                        <li class="list-unstyled ps-3"><a href="#" class="text-decoration-none">{{$size->sizeCode}}</a></li>
                       @endforeach
                     </div>
                   </div>
                 </div>
             </div>
         </div>
-        <div class="col-9 border-top d-flex" style="overflow-y:auto; max-height:100%">
+        <div class="col-9 border-top" style="overflow-y:auto; max-height:100%">
             @yield('userbox-content')
         </div>
     </div>
