@@ -12,7 +12,7 @@
             <a href="/admin/addclothes"><button type="button" class="btn btn-invisible">Transaction History</button></a><br><br>
             <a href="/admin/addclothes"><button type="button" class="btn btn-invisible">Customize Webpage</button></a>
         </div>
-        <div class="col-9">
+        <div class="col-9 p-4">
             @yield('box-content')
         </div>
     </div>

@@ -5,8 +5,8 @@
     @csrf
     <div class="header">
         <h4 class="modal-title">{{ __('Add New Clothes') }}</h4>
-    </div>        
-    <div class="body d-flex flex-column gap-4">
+    </div>
+    <div class="body d-flex flex-column gap-3">
         <div id="image">
             <p class=" mb-1">Image:</p>
             <input class="form-control" type="file" name="inImg" id="" class="form-control">

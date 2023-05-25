@@ -1,9 +1,17 @@
 @extends('layouts.app')
 
 @section('content')
-<div class="container">
-    <div class="row mt-4">
-        <div class="col">
+<div class="h-100 w-100 d-flex flex-column justify-content-center flex-grow-1" style="padding-right: 12px; padding-left:12px">
+    <div class="row" style="height:7.5%">
+      <div class="col d-flex justify-content-center align-items-center border-end">
+        Sort By:
+      </div>
+      <div class="col-9 d-flex justify-content-center align-items-center">
+        Browsing In: 
+      </div>
+    </div>
+    <div class="row" style="height:92.5%">
+        <div class="col border-top border-end">
             {{-- <div class="dropdown">
                 <button class="btn btn-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
                   Categories
@@ -14,14 +22,14 @@
                     @endforeach
                 </ul>
             </div> --}}
-            <div class="accordion" id="accordionExample">
+            <div class="accordion accordion-flush pt-1" id="accordionExample" style="background: white">
                 <div class="accordion-item">
                   <h2 class="accordion-header" id="collapseCategories">
                     <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
                       Categories
                     </button>
                   </h2>
-                  <div id="collapseOne" class="accordion-collapse collapse show" aria-labelledby="headingOne" data-bs-parent="#accordionExample">
+                  <div id="collapseOne" class="accordion-collapse collapse show" aria-labelledby="headingOne" >
                     <div class="accordion-body">
                         @foreach ($categories as $category)
                         <li><a href="#">{{$category->categoryName}}</a></li>
@@ -35,7 +43,7 @@
                       Gender
                     </button>
                   </h2>
-                  <div id="collapseTwo" class="accordion-collapse collapse" aria-labelledby="headingTwo" data-bs-parent="#accordionExample">
+                  <div id="collapseTwo" class="accordion-collapse collapse" aria-labelledby="headingTwo" >
                     <div class="accordion-body">
                       @foreach ($genders as $gender)
                         <li><a href="#">{{$gender->genderName}}</a></li>
@@ -49,7 +57,7 @@
                       Size
                     </button>
                   </h2>
-                  <div id="collapseThree" class="accordion-collapse collapse" aria-labelledby="headingThree" data-bs-parent="#accordionExample">
+                  <div id="collapseThree" class="accordion-collapse collapse" aria-labelledby="headingThree">
                     <div class="accordion-body">
                       @foreach ($sizes as $size)
                         <li><a href="#">{{$size->sizeCode}}</a></li>
@@ -59,7 +67,7 @@
                 </div>
             </div>
         </div>
-        <div class="col-9 overflow-auto mh-100">
+        <div class="col-9 border-top" style="overflow-y:auto; max-height:100%">
             @yield('userbox-content')
         </div>
     </div>

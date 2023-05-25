@@ -8,22 +8,30 @@
     <!-- CSRF Token -->
     <meta name="csrf-token" content="{{ csrf_token() }}">
 
-    <!-- <title>{{ config('app.name', 'Laravel') }}</title> -->
-    <title>StyleZest</title>
+    <title>{{ config('app.name', 'Laravel') }}</title>
 
     <!-- Fonts -->
     <link rel="dns-prefetch" href="//fonts.gstatic.com">
     <link href="https://fonts.bunny.net/css?family=Nunito" rel="stylesheet">
+
+    <style>
+        .accordion-item {
+            background-color: transparent !important;
+        }
+        .accordion-button {
+            background-color: transparent !important;
+        }
+    </style>
 
     <!-- Scripts -->
     @vite(['resources/sass/app.scss', 'resources/js/app.js'])
 </head>
 <body class="h-100">
     <div id="app" class="h-100 d-flex flex-column">
-        <nav class="navbar navbar-expand-md navbar-light shadow-sm" style="background-color: #3AAFA9; min-height:5%;">
+        <nav class="navbar navbar-expand-md navbar-light shadow-sm" style="background-color: #3AAFA9; height:5%;">
             <div class="container">
                 <a class="navbar-brand" href="{{ url('/') }}">
-                    <!-- {{ config('app.name', 'Laravel') }} -->
+                    {{ config('app.name', 'Laravel') }}
                 </a>
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="{{ __('Toggle navigation') }}">
                     <span class="navbar-toggler-icon"></span>
@@ -33,9 +41,9 @@
                     <!-- Left Side Of Navbar -->
                     <ul class="navbar-nav me-auto">
                         @if (Auth::user()->isAdmin == 1)
-                        <li class="nav-item">
+                        {{-- <li class="nav-item">
                             <a href="{{ route('users.index') }}" class="nav-link">User</a>
-                        </li>
+                        </li> --}}
                     @endif
                     </ul>
 
@@ -94,6 +102,10 @@
                                         <a class="dropdown-item" href="{{ route('admin.edit-password') }}">
                                             Edit Password
                                         </a>
+
+                                        <a class="dropdown-item" href="{{ route('users.index') }}">
+                                            Account panel
+                                        </a>
                                         <a class="dropdown-item" href="{{ route('logout') }}"
                                         onclick="event.preventDefault();
                                                         document.getElementById('logout-form').submit();">
@@ -112,11 +124,11 @@
             </div>
         </nav>
 
-        <div id="content-layout" class="h-100">
+        <div id="content-layout" class="d-flex flex-column" style="height:95%">
             <div id="image-placeholder" class="border" style="height:20%">
                 <img src="" alt="" class="">
             </div>
-            <main class="col-md-10 offset-md-1 border" style="height:84%; margin-top:-2%; background-color:white">
+            <main class="col-md-10 offset-md-1 border flex-grow-1" style="margin-top:-2%; background-color:white;">
                 @yield('content')
             </main>
         </div>
