@@ -8,6 +8,7 @@
             <a href="/admin/category"><button type="button" class="btn btn-invisible">Category</button></a><br><br>
             <a href="/admin/sizeindex"><button type="button" class="btn btn-invisible">Size</button></a><br><br>
             <a href="/admin/color"><button type="button" class="btn btn-invisible">Color</button></a><br><br>
+            <a href="/admin/gender"><button type="button" class="btn btn-invisible">Gender</button></a><br><br>
             <a href="/admin/addclothes"><button type="button" class="btn btn-invisible">Transaction History</button></a><br><br>
             <a href="/admin/addclothes"><button type="button" class="btn btn-invisible">Customize Webpage</button></a>
         </div>

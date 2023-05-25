@@ -64,4 +64,10 @@ class HomeController extends Controller
 
         return view('admin.categoryindex', ['categories' => $categories]);
     }
+
+    public function adminGender(){
+        $genders = Gender::all();
+
+        return view('admin.genderindex', ['genders' => $genders]);
+    }
 }

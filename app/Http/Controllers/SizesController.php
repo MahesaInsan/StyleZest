@@ -20,12 +20,12 @@ class SizesController extends Controller
         $sizeName = Size::all();
         $sizeDesc = Size::all();
 
-        return view('admin.addsize', ['sizeName' => $sizeName, 'sizeDesc' => $sizeDesc]);
+        return view('admin.addsize', ['sizeName ' => $sizeName, 'sizeDesc' => $sizeDesc]);
     }
 
     public function saveSizes(Request $request){
         Size::insert([
-            'sizeName' => $request->sizeName,
+            'sizeCode' => $request->sizeName,
             'sizeDesc' => $request->sizeDesc
         ]);
 
