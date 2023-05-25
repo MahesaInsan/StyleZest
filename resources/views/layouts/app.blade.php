@@ -128,7 +128,7 @@
             <div id="image-placeholder" class="border" style="height:20%">
                 <img src="" alt="" class="">
             </div>
-            <main class="col-md-10 offset-md-1 border flex-grow-1" style="margin-top:-2%; background-color:white;">
+            <main class="col-md-10 offset-md-1 border flex-grow-1" style="height:80%; margin-top:-2%; background-color:white;">
                 @yield('content')
             </main>
         </div>

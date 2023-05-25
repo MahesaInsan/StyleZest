@@ -1,7 +1,7 @@
 @extends('layouts.app')
 
 @section('content')
-<div class="h-100 w-100 d-flex flex-column justify-content-center flex-grow-1" style="padding-right: 12px; padding-left:12px">
+<div class="h-100 w-100 d-flex flex-column justify-content-center flex-grow-1 fs-5" style="padding-right: 12px; padding-left:12px">
     <div class="row" style="height:7.5%">
       <div class="col d-flex justify-content-center align-items-center border-end">
         Sort By:
@@ -67,7 +67,7 @@
                 </div>
             </div>
         </div>
-        <div class="col-9 border-top" style="overflow-y:auto; max-height:100%">
+        <div class="col-9 border-top d-flex" style="overflow-y:auto; max-height:100%">
             @yield('userbox-content')
         </div>
     </div>
