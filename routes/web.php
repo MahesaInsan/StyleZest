@@ -72,6 +72,18 @@ Route::get('/admin/editcategories/{id}', [App\Http\Controllers\CategoriesControl
 Route::put('/admin/editcategories/{id}', [App\Http\Controllers\CategoriesController::class, 'updateCategories']);
 Route::delete('/admin/deletecategories/{id}', [App\Http\Controllers\CategoriesController::class, 'deleteCategories']);
 
+//gender's route
+Route::get('/admin/gender', [App\Http\Controllers\HomeController::class, 'adminGender'])->name('adminGender');
+Route::get('/admin/addgender', [App\Http\Controllers\GendersController::class, 'addGenders'])->name('addGenders');
+Route::post('/admin/addgender', [App\Http\Controllers\GendersController::class, 'saveGenders']);
+Route::get('/admin/editgenders/{id}', [App\Http\Controllers\GendersController::class, 'editGenders']);
+Route::put('/admin/editgenders/{id}', [App\Http\Controllers\GendersController::class, 'updateGenders']);
+Route::delete('/admin/deletegenders/{id}', [App\Http\Controllers\GendersController::class, 'deleteGenders']);
+
+
 /* User Page -> Buy section */
 Route::get('buyclothes/{id}', [App\Http\Controllers\ClothesController::class, 'buyClothes']);
+
+
+
 
