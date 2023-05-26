@@ -21,39 +21,41 @@
             }
         </style>
     </head>
-    <body class="h-100 d-flex justify-content-center align-items-center" style="height: 100vh">
-        <div class="container h-75 bg-gray-100">
+    <body class="h-100 d-flex justify-content-center align-items-center" style="height:100vh; background-image: url('/images/stylezestAssets/bgImage.jpg'); background-repeat: no-repeat; background-size:cover">
+        <div class="container h-75 shadow rounded" style="background-color: white">
             <div class="h-100 col-10 offset-1">
-                <div class="h-100 d-flex flex-column justify-content-center">
+                <div class="h-100 d-flex flex-column justify-content-center gap-4">
                     <div class="row">
                         <div class="col-5 d-flex flex-column justify-content-center align-items-center">
-                            <img src="" alt="">
-                            <h1>Company</h1>
+                            <img class="w-75" src="{{url('/images/stylezestAssets/NextEra-Logo.png')}}" alt="">
+                            <h4>Company</h4>
                         </div>
-                        <div class="col-2 text-center">
+                        <div class="col-2 d-flex justify-content-center align-items-center">
                             <h4>Powered by</h4>
                         </div>
                         <div class="col-5 d-flex flex-column justify-content-center align-items-center">
-                            <img src="" alt="">
-                            <h1>StyleZest</h1>
+                            <img class="w-75" src="{{url('/images/stylezestAssets/StyleZest-Logo.png')}}" alt="">
+                            <h4>StyleZest</h4>
                         </div>
                     </div>
                     <div class="row">
                         <div class="col text-center">
-                            <h4>Presents...</h4>
+                            <h3>Start Your Journey With Us</h3>
                         </div>
                     </div>
     
                     <div>
                         @if (Route::has('login'))
-                            <div class="d-flex">
+                            <div class="d-flex row">
                                 @auth
-                                    <a href="{{ url('/home') }}" class="text-sm text-gray-700 dark:text-gray-500 underline">Home</a>
+                                    <a class="col-6 offset-3 btn btn-secondary" href="{{ url('/home') }}" class="text-sm text-gray-700 dark:text-gray-500 underline">Continue Browsing</a>
                                 @else
-                                    <a href="{{ route('login') }}" class="text-sm text-gray-700 dark:text-gray-500 underline">Log in</a>
-            
+                                    <a class="col-3 offset-2 btn btn-secondary" href="{{ route('login') }}" class="text-sm text-gray-700 dark:text-gray-500 underline">Log in</a>
+
+                                    <div class="col-2 d-flex justify-content-center align-items-center">Or</div>
+
                                     @if (Route::has('register'))
-                                        <a href="{{ route('register') }}" class="ml-4 text-sm text-gray-700 dark:text-gray-500 underline">Register</a>
+                                        <a class="col-3 btn btn-secondary" href="{{ route('register') }}" class="ml-4 text-sm text-gray-700 dark:text-gray-500 underline">Register</a>
                                     @endif
                                 @endauth
                             </div>
