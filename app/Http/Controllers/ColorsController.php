@@ -4,11 +4,13 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\color;
+use App\Models\Custom;
 
 class ColorsController extends Controller
 {
     public function getColors(){
         $colors = color::all();
+        $custom = Custom::first();
 
         return view('admin.colorindex', ['colors' => $colors]);
     }    
@@ -16,8 +18,9 @@ class ColorsController extends Controller
     public function addColors(){
         $colorname = color::all();
         $colorcode = color::all();
+        $custom = Custom::first();
 
-        return view('admin.addcolor', ['colorname' => $colorname, 'colorcode' => $colorcode]);
+        return view('admin.addcolor', ['colorname' => $colorname, 'colorcode' => $colorcode, 'custom' => $custom]);
     }
 
     public function saveColors(Request $request){
@@ -33,8 +36,9 @@ class ColorsController extends Controller
         $color = color::find($id);
         $colorname = color::all();
         $colorcode = color::all();
+        $custom = Custom::first();
     
-        return view('/admin/editcolors', ['color' => $color, 'colorname' => $colorname, 'colorcode' => $colorcode]);
+        return view('admin.editcolors', ['color' => $color, 'colorname' => $colorname, 'colorcode' => $colorcode, 'custom' => $custom]);
     }
 
     public function updateColors($id, Request $request){

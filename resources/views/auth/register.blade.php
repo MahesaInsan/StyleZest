@@ -7,14 +7,14 @@
     @include('cdn')
     <title>StyleZest - Register</title>
 </head>
-<body class="h-100 d-flex justify-content-center align-items-center" style="background-image: url('/images/stylezestAssets/bgImage.jpg'); background-repeat: no-repeat; background-size:cover">
+<body class="h-100 d-flex justify-content-center align-items-center" style="background-image: url('{{ asset('storage/images/customs/' . $custom->bannerimg) }}'); background-repeat: no-repeat; background-size:cover;">
     <div class="container h-75">
         <div class="row justify-content-center align-content-center h-100">
             <div class="col-lg-6 col-sm-9 h-100 d-flex">
                 <div class="card flex-grow-1 d-flex flex-column justify-content-center shadow" style="background-color: white;">
                     <div class="card-body d-flex flex-column justify-content-center">
                         <div class="d-flex flex-column justify-content-center align-items-center mb-2">
-                            <img class="w-50 mb-2" src="{{url('/images/stylezestAssets/NextEra-Logo.png')}}" alt="" style="object-fit: cover">
+                            <img class="w-50 mb-2" src="{{ asset('storage/images/customs/' . $custom->logo) }}" alt="" style="object-fit: cover">
                         </div>
                         <form method="POST" action="{{ route('register') }}">
                             @csrf
@@ -80,7 +80,7 @@
                                         <span>Already have an account? <a href="{{ route('login') }}" style="color:black">Login</a></span>
                                     </div>
                                     <div class="col-md-6 offset-md-3">
-                                        <button type="submit" class="btn btn-secondary d-flex w-100 justify-content-center">
+                                        <button type="submit" class="btn btn-secondary d-flex w-100 justify-content-center" style="background-color:{{$custom->buttoncolor}}">
                                             {{ __('Register') }}
                                         </button>
                                     </div>

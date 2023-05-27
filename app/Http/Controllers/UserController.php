@@ -6,6 +6,7 @@ use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Hash;
+use App\Models\Custom;
 
 class UserController extends Controller
 {   
@@ -13,23 +14,30 @@ class UserController extends Controller
     public function index()
     {
         $users = User::all();
+        $custom = Custom::first();
         return view('admin.users.index', [
-            'users' => $users
+            'users' => $users,
+            'custom' => $custom
         ]);
     }
 
     public function edit_profile()
     {
         $item = User::findOrFail(Auth::user()->id);
+        $custom = Custom::first();
 
         return view('admin.edit-profile', [
-            'item' => $item
+            'item' => $item,
+            'custom' => $custom
         ]);
     }
 
     public function edit_password()
     {
-        return view('admin.edit-password');
+        $custom = Custom::first();
+        return view('admin.edit-password', [
+            'custom' => $custom
+        ]);
     }
 
     public function update(Request $request, $id)

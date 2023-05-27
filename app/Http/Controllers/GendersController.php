@@ -4,20 +4,23 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Gender;
+use App\Models\Custom;
 
 class GendersController extends Controller
 {
     public function getGenders(){
         $genders = Gender::all();
+        $custom = Custom::first();
 
-        return view('admin.genderindex', ['genders' => $genders]);
+        return view('admin.genderindex', ['genders' => $genders, 'custom' => $custom]);
     } 
     
     public function addGenders(){
         $genderName = Gender::all();
         //$genderDesc = Gender::all();
+        $custom = Custom::first();
 
-        return view('admin.addgender', ['genderName' => $genderName]);
+        return view('admin.addgender', ['genderName' => $genderName, 'custom' => $custom]);
     }
 
     public function saveGenders(Request $request){
@@ -31,8 +34,9 @@ class GendersController extends Controller
     public function editGenders($id){
         $gender = Gender::find($id);
         $genderName = Gender::all();
+        $custom = Custom::first();
     
-        return view('admin.editgender', ['gender' => $gender, 'genderName' => $genderName]);
+        return view('admin.editgender', ['gender' => $gender, 'genderName' => $genderName, 'custom' => $custom]);
     }
 
     public function updateGenders($id, Request $request){

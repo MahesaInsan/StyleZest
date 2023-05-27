@@ -7,14 +7,14 @@
     @include('cdn')
     <title>StyleZest - Login</title>
 </head>
-<body class="h-100 d-flex justify-content-center align-items-center" style="background-image: url('/images/stylezestAssets/bgImage.jpg'); background-repeat: no-repeat; background-size:cover">
+<body class="h-100 d-flex justify-content-center align-items-center" style="background-image: url('{{ asset('storage/images/customs/' . $custom->bannerimg) }}'); background-repeat: no-repeat; background-size:cover;">
     <div class="container h-75">
         <div class="row justify-content-center align-content-center h-100 ">
             <div class="col-lg-6 col-sm-9 h-100 d-flex flex-column justify-content-center align-items-center">
                 <div class="card h-100 w-100 d-flex flex-column justify-content-center shadow" style="background-color:white;">
                     <div class="card-body w-100 gap-md-5 gap-sm-3 d-flex flex-column justify-content-center">
                         <div class="d-flex flex-column justify-content-center align-items-center fw-bold pb-1" style="font-size:2rem">{{-- {{ __('Login') }} --}}
-                            <img class="w-50 mb-2" src="{{url('/images/stylezestAssets/NextEra-Logo.png')}}" alt="" style="object-fit: cover">
+                            <img class="w-50 mb-2" src="{{ asset('storage/images/customs/' . $custom->logo) }}" alt="" style="object-fit: cover">
                             <p style="font-size: 1.75rem">Welcome Back!</p>
                         </div>
                         <form class="d-flex flex-column align-items-center justify-content-center w-100" method="POST" action="{{ route('login') }}">
@@ -69,7 +69,7 @@
                                         <span>Don't have an account? <a href="{{ route('register') }}" style="color:black">Register</a></span>
                                     </div>
                                     
-                                    <button type="submit" class="btn btn-secondary">
+                                    <button type="submit" class="btn btn-secondary" style="background-color:{{$custom->buttoncolor}}">
                                         {{ __('Login') }}
                                     </button>
                                     

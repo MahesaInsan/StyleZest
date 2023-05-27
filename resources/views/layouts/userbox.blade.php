@@ -11,17 +11,7 @@
       </div>
     </div>
     <div class="row" style="height:92.5%">
-        <div class="col border-top border-end">
-            {{-- <div class="dropdown">
-                <button class="btn btn-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
-                  Categories
-                </button>
-                <ul class="dropdown-menu">
-                    @foreach ($categories as $category)
-                    <li><a class="dropdown-item" href="#">{{$category->categoryName}}</a></li>
-                    @endforeach
-                </ul>
-            </div> --}}
+        <div class="col border-top border-end" style="padding:0px">
             <div class="accordion accordion-flush pt-1 fs-6" id="accordionExample" style="background: white">
                 <div class="accordion-item">
                   <h2 class="accordion-header" id="collapseCategories">
