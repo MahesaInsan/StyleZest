@@ -36,7 +36,7 @@ class ProductController extends Controller{
         $transaction->totPrice = $transaction->totPrice + $totPrice;
         $transaction->totItem = $transaction->totItem + $request->inAmount;
         $transaction->save();
-
+        
         return redirect('home');
     }
 
