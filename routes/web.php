@@ -91,6 +91,8 @@ Route::put('/admin/editcustomizeweb/{id}', [App\Http\Controllers\CustomsControll
 Route::get('/buyclothes/{id}', [App\Http\Controllers\ClothesController::class, 'buyClothes']);
 Route::post('/buyclothes/{id}', [App\Http\Controllers\ProductController::class, 'addtoCart']);
 
-
+/* User Page -> Transaction */
+Route::get('/transaction', [App\Http\Controllers\TransactionController::class, 'showTransaction']);
+Route::get('/admin/transactionindex', [App\Http\Controllers\TransactionController::class, 'showIndex']);
 
 

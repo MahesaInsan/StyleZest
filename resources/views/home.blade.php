@@ -10,7 +10,9 @@
                             <div class="card-body">
                                 <h5 class="card-title">{{$cl->clothesName}}</h5>
                                 <p class="card-text">Rp. {{$cl->price}}</p>
-                                <a class="btn" href="/buyclothes/{{$cl->id}}">Buy</a>
+                                <div class="d-flex justify-content-end">
+                                    <a class="btn justify-content-end w-50" href="/buyclothes/{{$cl->id}}" style="background-color:{{$custom->buttoncolor}}">Buy</a>
+                                </div>
                             </div>  
                         </div>
                     </div>

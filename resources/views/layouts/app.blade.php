@@ -28,11 +28,11 @@
 </head>
 <body class="h-100">
     <div id="app" class="h-100 d-flex flex-column">
-        <nav class="navbar navbar-expand-md navbar-light shadow-sm" style="background-color: {{$custom->maincolor}}; height:5%;">
+        <nav class="navbar navbar-expand-md navbar-light shadow-sm" style="background-color: {{$custom->maincolor}}; height:7.5%;">
             <div class="container h-100">
                 <a class="navbar-brand d-flex align-items-center gap-2 h-100" href="{{ url('/') }}">
-                    <img src="{{ asset('storage/images/customs/'. $custom->logo) }}" alt="" style="object-fit: cover; height:350%">
-                    <h3>{{$custom->company}}</h3>
+                    <img class="me-2"src="{{ asset('storage/images/customs/'. $custom->logo) }}" alt="" style="object-fit: cover; height:200%">
+                    <h4 class="mb-0">{{$custom->company}}</h4>
                 </a>
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="{{ __('Toggle navigation') }}">
                     <span class="navbar-toggler-icon"></span>
@@ -65,8 +65,9 @@
                             @endif
                         @else
                             <li>
-                                <a href="">
+                                <a href="{{ url('/transaction') }}">
                                     <img src="" alt="">
+                                    Transaction
                                 </a>
                             </li>
                             <li class="nav-item dropdown">
@@ -133,7 +134,7 @@
             </div>
         </nav>
 
-        <div id="content-layout" class="d-flex flex-column" style="height:95%; background-color:{{$custom->bgcolor}};">
+        <div id="content-layout" class="d-flex flex-column" style="height:92.5%; background-color:{{$custom->bgcolor}};">
             <div id="image-placeholder" class="border" style="height:20%; background-image: url('{{ asset('storage/images/customs/' . $custom->bannerimg) }}'); background-repeat: no-repeat; background-size:cover;">
                 <img src="" alt="" class="">
             </div>
