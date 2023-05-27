@@ -32,7 +32,9 @@
                   <div id="collapseOne" class="accordion-collapse collapse show" aria-labelledby="headingOne" >
                     <div class="accordion-body">
                         @foreach ($categories as $category)
-                        <li class="list-unstyled ps-3"><a href="#" class="text-decoration-none">{{$category->categoryName}}</a></li>
+                        <li class="list-unstyled ps-3"><a
+                          href="{{ route('home.filter', ['filter' => 'category', 'name_filter' => $category->categoryName]) }}"
+                          class="text-decoration-none">{{ $category->categoryName }}</a></li>
                         @endforeach
                     </div>
                   </div>
@@ -46,7 +48,9 @@
                   <div id="collapseTwo" class="accordion-collapse collapse" aria-labelledby="headingTwo" >
                     <div class="accordion-body">
                       @foreach ($genders as $gender)
-                        <li class="list-unstyled ps-3"><a href="#" class="text-decoration-none">{{$gender->genderName}}</a></li>
+                      <li class="list-unstyled ps-3"><a
+                        href="{{ route('home.filter', ['filter' => 'gender', 'name_filter' => $gender->genderName]) }}"
+                        class="text-decoration-none">{{ $gender->genderName }}</a></li>
                       @endforeach
                     </div>
                   </div>
@@ -60,7 +64,9 @@
                   <div id="collapseThree" class="accordion-collapse collapse" aria-labelledby="headingThree">
                     <div class="accordion-body">
                       @foreach ($sizes as $size)
-                        <li class="list-unstyled ps-3"><a href="#" class="text-decoration-none">{{$size->sizeCode}}</a></li>
+                        <li class="list-unstyled ps-3"><a 
+                          href="{{ route('home.filter', ['filter' => 'sizes', 'name_filter' => $size->sizeCode]) }}" 
+                          class="text-decoration-none">{{$size->sizeCode}}</a></li>
                       @endforeach
                     </div>
                   </div>
