@@ -23,7 +23,7 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/', function () {
     return view('welcome');
-});
+})->name('welcome');
 
 Auth::routes();
 Route::get('/box', function () {
@@ -33,6 +33,7 @@ Route::get('/box', function () {
 /* Admin Page -> Clothes section */
 Route::get('/admin/home', [App\Http\Controllers\HomeController::class, 'adminHome'])->name('adminhome')->middleware('isAdmin');
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+Route::get('/home/filter/{filter}/{name_filter}', [App\Http\Controllers\HomeController::class, 'filter'])->name('home.filter');
 
 Route::get('/admin/addclothes', [App\Http\Controllers\ClothesController::class, 'addClothes'])->name('addClothes');
 Route::post('/admin/addclothes', [App\Http\Controllers\ClothesController::class, 'saveClothes']);
@@ -85,5 +86,4 @@ Route::delete('/admin/deletegenders/{id}', [App\Http\Controllers\GendersControll
 Route::get('buyclothes/{id}', [App\Http\Controllers\ClothesController::class, 'buyClothes']);
 
 
-
-
+Route::get('/products', [ProductController::class, 'index_product'])->name('products.index');

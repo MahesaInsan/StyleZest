@@ -33,11 +33,35 @@ class HomeController extends Controller
         $genders = Gender::all();
         $categories = Categories::all();
         $sizes = Size::all();
+        $custom = Custom::first();
+
+        return view('home', ['categories' => $categories])->with('colors', $colors)->with('genders', $genders)->with('sizes', $sizes)->with('clothes', $clothes)->with('custom', $custom);
+    }
+
+    public function filter($filter, $name_filter)
+    {
+        if ($filter == 'gender') {
+            $gender = Gender::where('genderName', $name_filter)->first();
+            $clothes = Clothes::where('genderId', $gender->id)->get();
+        } else if ($filter == 'category') {
+            $category = Categories::where('categoryName', $name_filter)->first();
+            $clothes = Clothes::where('categoryId', $category->id)->get();
+            // } else if ($filter == 'sizes') {
+            //     $clothes = Clothes::all();
+        } else {
+            $clothes = Clothes::all();
+        }
+
+        $colors = color::all();
+        $genders = Gender::all();
+        $categories = Categories::all();
+        $sizes = Size::all();
 
         return view('home', ['categories' => $categories])->with('colors', $colors)->with('genders', $genders)->with('sizes', $sizes)->with('clothes', $clothes);
     }
-    
-    public function adminHome(){
+
+    public function adminHome()
+    {
         $clothes = Clothes::all();
         $colors = color::all();
         $genders = Gender::all();
@@ -47,25 +71,29 @@ class HomeController extends Controller
         return view('admin.adminhome', ['clothes' => $clothes, 'colors' => $colors, 'genders' => $genders, 'categories' => $categories, 'sizes' => $sizes]);
     }
 
-    public function showsize(){
+    public function showsize()
+    {
         $sizes = Size::all();
-        
+
         return view('admin.sizeindex', ['sizes' => $sizes]);
     }
 
-    public function adminColor(){
+    public function adminColor()
+    {
         $colors = color::all();
 
         return view('admin.colorindex', ['colors' => $colors]);
     }
 
-    public function adminCategory(){
+    public function adminCategory()
+    {
         $categories = Categories::all();
 
         return view('admin.categoryindex', ['categories' => $categories]);
     }
 
-    public function adminGender(){
+    public function adminGender()
+    {
         $genders = Gender::all();
 
         return view('admin.genderindex', ['genders' => $genders]);
