@@ -37,13 +37,12 @@ class ProductController extends Controller{
         $transaction->totItem = $transaction->totItem + $request->inAmount;
         $transaction->save();
 
-        $clothes = Clothes::all();
-        return view('index_product', ['clothes' => $clothes]);
+        return redirect('home');
     }
 
 }
     
-}
+
 
 
 ?>
