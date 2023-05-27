@@ -17,4 +17,8 @@ class Clothes extends Model
     public function sizes(){
         return $this->belongsToMany(Size::class, 'Clothes_has__Sizes', 'clothesId', 'sizeId');
     }
+
+    public function transaction_has_clothes(){
+        return $this->hasMany(transaction_has_clothes::class);
+    }
 }

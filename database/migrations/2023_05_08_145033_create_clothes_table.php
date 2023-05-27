@@ -25,6 +25,8 @@ return new class extends Migration
             $table->foreign('categoryId')->references('id')->on('categories')->onDelete('cascade')->onUpdate('cascade');
             $table->unsignedBigInteger('genderId');
             $table->foreign('genderId')->references('id')->on('genders')->onDelete('cascade')->onUpdate('cascade');
+            // $table->unsignedBigInteger('sizeId');
+            // $table->foreign('sizeId')->references('id')->on('sizes')->onDelete('cascade')->onUpdate('cascade');
         });
     }
 

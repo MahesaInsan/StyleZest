@@ -5,22 +5,24 @@ namespace App\Http\Controllers;
 use App\Models\Categories;
 use Illuminate\Http\Request;
 use App\Models\Size;
-use App\Models\Clothes_has_Sizes;
+use App\Models\Custom;
 
 class SizesController extends Controller
 {
     //show all data about size
     public function showsize(){
         $sizes = Size::all();
+        $custom = Custom::first();
         
-        return view('admin.sizeindex', ['sizes' => $sizes]);
+        return view('admin.sizeindex', ['sizes' => $sizes, 'custom' => $custom]);
     }
 
     public function addSizes(){
         $sizeName = Size::all();
         $sizeDesc = Size::all();
+        $custom = Custom::first();
 
-        return view('admin.addsize', ['sizeName ' => $sizeName, 'sizeDesc' => $sizeDesc]);
+        return view('admin.addsize', ['sizeName ' => $sizeName, 'sizeDesc' => $sizeDesc, 'custom' => $custom]);
     }
 
     public function saveSizes(Request $request){
@@ -36,8 +38,9 @@ class SizesController extends Controller
         $size = Size::find($id);
         $sizeName = Size::all();
         $sizeDesc = Size::all();
+        $custom = Custom::first();
     
-        return view('admin.editsizes', ['size' => $size, 'sizeName' => $sizeName, 'sizeDesc' => $sizeDesc]);
+        return view('admin.editsizes', ['size' => $size, 'sizeName' => $sizeName, 'sizeDesc' => $sizeDesc, 'custom' => $custom]);
     }
 
     public function updateSizes($id, Request $request){
