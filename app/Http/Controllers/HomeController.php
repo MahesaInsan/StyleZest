@@ -38,6 +38,31 @@ class HomeController extends Controller
 
         return view('home', ['categories' => $categories, 'custom' => $custom])->with('colors', $colors)->with('genders', $genders)->with('sizes', $sizes)->with('clothes', $clothes);
     }
+
+    public function filter($filter, $name_filter)
+    {
+        if ($filter == 'gender') {
+            $gender = Gender::where('genderName', $name_filter)->first();
+            $clothes = Clothes::where('genderId', $gender->id)->get();
+        } else if ($filter == 'category') {
+            $category = Categories::where('categoryName', $name_filter)->first();
+            $clothes = Clothes::where('categoryId', $category->id)->get();
+        // } else if ($filter == 'sizes') {
+        //     $clothes = Clothes::all();
+        //     $size = Size::where('sizeCode', $name_filter)->first();
+        //     $clothes = Clothes::where('sizeId', $size->id)->get();
+        } else {
+            $clothes = Clothes::all();
+        }
+
+        $colors = color::all();
+        $genders = Gender::all();
+        $categories = Categories::all();
+        $sizes = Size::all();
+
+        return view('home', ['categories' => $categories])->with('colors', $colors)->with('genders', $genders)->with('sizes', $sizes)->with('clothes', $clothes);
+    }
+
     
     public function adminHome(){
         $clothes = Clothes::all();

@@ -35,6 +35,7 @@ Route::get('/box', function () {
 /* Admin Page -> Clothes section */
 Route::get('/admin/home', [App\Http\Controllers\HomeController::class, 'adminHome'])->name('adminhome')->middleware('isAdmin');
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+Route::get('/home/filter/{filter}/{name_filter}', [App\Http\Controllers\HomeController::class, 'filter'])->name('home.filter');
 
 Route::get('/admin/addclothes', [App\Http\Controllers\ClothesController::class, 'addClothes'])->name('addClothes');
 Route::post('/admin/addclothes', [App\Http\Controllers\ClothesController::class, 'saveClothes']);
@@ -94,5 +95,5 @@ Route::post('/buyclothes/{id}', [App\Http\Controllers\ProductController::class, 
 /* User Page -> Transaction */
 Route::get('/transaction', [App\Http\Controllers\TransactionController::class, 'showTransaction']);
 Route::get('/admin/transactionindex', [App\Http\Controllers\TransactionController::class, 'showIndex']);
-
+Route::get('/products', [ProductController::class, 'index_product'])->name('products.index');
 
