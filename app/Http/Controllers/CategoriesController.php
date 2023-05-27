@@ -4,20 +4,24 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Categories;
+use App\Models\Custom;
 
 class CategoriesController extends Controller
 {
     public function getCategories(){
         $categories = Categories::all();
+        $categories = Categories::all();
+        $custom = Custom::first();
 
-        return view('admin.categoryindex', ['categories' => $categories]);
+        return view('admin.categoryindex', ['categories' => $categories, 'custom'=>$custom]);
     } 
     
     public function addCategories(){
         $categoryName = Categories::all();
-        $categoryDesc = Categories::all();
+        $categoryDesc = Custom::all();
+        $custom = Custom::first();
 
-        return view('admin.addcategory', ['categoryName' => $categoryName, 'categoryDesc' => $categoryDesc]);
+        return view('admin.addcategory', ['categoryName' => $categoryName, 'categoryDesc' => $categoryDesc, 'custom'=>$custom]);
     }
 
     public function saveCategories(Request $request){
@@ -33,8 +37,9 @@ class CategoriesController extends Controller
         $category = Categories::find($id);
         $categoryName = Categories::all();
         $categoryDesc = Categories::all();
+        $custom = Custom::first();
     
-        return view('admin.editcategories', ['category' => $category, 'categoryName' => $categoryName, 'categoryDesc' => $categoryDesc]);
+        return view('admin.editcategories', ['category' => $category, 'categoryName' => $categoryName, 'categoryDesc' => $categoryDesc, 'custom'=>$custom]);
     }
 
     public function updateCategories($id, Request $request){

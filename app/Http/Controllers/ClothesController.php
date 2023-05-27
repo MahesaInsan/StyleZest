@@ -10,7 +10,8 @@ use App\Models\Gender;
 use App\Models\Categories;
 use App\Models\Clothes_has_Colors;
 use App\Models\Clothes_has_Sizes;
-use App\Models\Size;        
+use App\Models\Size;       
+use App\Models\Custom; 
 
 
 class ClothesController extends Controller
@@ -25,8 +26,9 @@ class ClothesController extends Controller
         $genders = Gender::all();
         $categories = Categories::all();
         $sizes = Size::all();
+        $custom = Custom::first();
 
-        return view('admin.addclothes', ['colors' => $colors, 'genders' => $genders, 'categories' => $categories, 'sizes' => $sizes]);
+        return view('admin.addclothes', ['colors' => $colors, 'genders' => $genders, 'categories' => $categories, 'sizes' => $sizes, 'custom' => $custom]);
     }
     
     public function saveClothes(Request $request){
@@ -70,8 +72,9 @@ class ClothesController extends Controller
         $genders = Gender::all();
         $categories = Categories::all();
         $sizes = Size::all();
+        $custom = Custom::first();
         
-        return view('/admin/editclothes', ['clothes' => $clothes, 'colors' => $colors, 'genders' => $genders, 'categories' => $categories, 'sizes' => $sizes]);
+        return view('/admin/editclothes', ['clothes' => $clothes, 'colors' => $colors, 'genders' => $genders, 'categories' => $categories, 'sizes' => $sizes, 'custom' => $custom]);
     }
 
     public function updateClothes($id, Request $request){
@@ -98,6 +101,7 @@ class ClothesController extends Controller
     public function buyClothes($id){
         $clothes = Clothes::find($id);
         $gender = Gender::find($clothes->genderId);
+        $custom = Custom::first();
         
         /* foreach ($colors as $color) {
             $colorCodes = $color->colorcode;
@@ -107,6 +111,6 @@ class ClothesController extends Controller
             $sizeCodes = $size->sizeCode;
         } */
         
-        return view('buyclothes', ['clothes' => $clothes, 'gender' => $gender]);
+        return view('buyclothes', ['clothes' => $clothes, 'gender' => $gender, 'custom' => $custom]);
     }
 }

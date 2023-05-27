@@ -5,12 +5,14 @@
     <div class="row p-4 h-100">
         <div class="col h-100">
             <div class="h-75">
-                    <img src="{{ asset('storage/images/clothes/'. $clothes->image) }}" alt="" style="max-width:100%; max-height:80%;">
+                    <img src="{{ asset('storage/images/clothes/'. $clothes->image) }}" class="h-100 w-100" style="object-fit:cover">
                 </div>
-                <h5 class="fw-bold" style="font-size: 1.25rem">{{$clothes->clothesName}}</h5>
+                <h5 class="fw-bold mt-4" style="font-size: 1.25rem">{{$clothes->clothesName}}</h5>
                 <p style="font-size: 1rem">{{$clothes->clothesDescription}}</p>
         </div>
-        <div class="col h-100">
+
+        <form action="/buyclothes/{{$clothes->id}}" method="post" enctype="multipart/form-data" class="col h-100">
+            @csrf
             <div class="d-flex flex-column justify-content-between h-100">
                 <div class="d-flex flex-column justify-content-between h-75">
                     <p style="font-size: 1.25rem">Gender: {{$gender->genderName}}</p>
@@ -47,9 +49,9 @@
 
                     <h5 class="fw-bold" style="font-size: 1.25rem">Rp. {{$clothes->price}}</h5>
                 </div>
-                
-                <button class="mb-4">Add to Cart</button>
+
+                <input type="submit" class="button" value="Add to Cart">
             </div>
-        </div>
+        </form>
     </div>
 @endsection

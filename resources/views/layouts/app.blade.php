@@ -28,10 +28,11 @@
 </head>
 <body class="h-100">
     <div id="app" class="h-100 d-flex flex-column">
-        <nav class="navbar navbar-expand-md navbar-light shadow-sm" style="background-color: #3AAFA9; height:5%;">
-            <div class="container">
-                <a class="navbar-brand" href="{{ url('/') }}">
-                    {{ config('app.name', 'Laravel') }}
+        <nav class="navbar navbar-expand-md navbar-light shadow-sm" style="background-color: {{$custom->maincolor}}; height:5%;">
+            <div class="container h-100">
+                <a class="navbar-brand d-flex align-items-center gap-2 h-100" href="{{ url('/') }}">
+                    <img src="{{ asset('storage/images/customs/'. $custom->logo) }}" alt="" style="object-fit: cover; height:350%">
+                    <h3>{{$custom->company}}</h3>
                 </a>
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="{{ __('Toggle navigation') }}">
                     <span class="navbar-toggler-icon"></span>
@@ -86,7 +87,7 @@
                                         </a>
                                         <a class="dropdown-item" href="{{ route('logout') }}"
                                         onclick="event.preventDefault();
-                                                        document.getElementById('logout-form').submit();">
+                                            document.getElementById('logout-form').submit();">
                                             {{ __('Logout') }}
                                         </a>
 
@@ -95,6 +96,14 @@
                                         </form>
                                     @else
                                         {{-- edit profile and password (admin) --}}
+                                        <a class="dropdown-item" href="{{ route('adminhome') }}">
+                                            Admin Page
+                                        </a>
+
+                                        <a class="dropdown-item" href="{{ route('home') }}">
+                                            User Page
+                                        </a>
+
                                         <a class="dropdown-item" href="{{ route('admin.edit-profile') }}">
                                             Edit Profile
                                         </a>
@@ -124,11 +133,11 @@
             </div>
         </nav>
 
-        <div id="content-layout" class="d-flex flex-column" style="height:95%">
-            <div id="image-placeholder" class="border" style="height:20%">
+        <div id="content-layout" class="d-flex flex-column" style="height:95%; background-color:{{$custom->bgcolor}};">
+            <div id="image-placeholder" class="border" style="height:20%; background-image: url('{{ asset('storage/images/customs/' . $custom->bannerimg) }}'); background-repeat: no-repeat; background-size:cover;">
                 <img src="" alt="" class="">
             </div>
-            <main class="col-md-10 offset-md-1 border flex-grow-1" style="height:80%; margin-top:-2%; background-color:white;">
+            <main class="col-md-10 offset-md-1 border flex-grow-1 shadow-sm" style="height:80%; margin-top:-2%; background-color:white">
                 @yield('content')
             </main>
         </div>

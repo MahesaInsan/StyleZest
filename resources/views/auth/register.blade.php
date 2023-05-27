@@ -7,72 +7,80 @@
     @include('cdn')
     <title>StyleZest - Register</title>
 </head>
-<body class="h-100 d-flex justify-content-center align-items-center">
+<body class="h-100 d-flex justify-content-center align-items-center" style="background-image: url('{{ asset('storage/images/customs/' . $custom->bannerimg) }}'); background-repeat: no-repeat; background-size:cover;">
     <div class="container h-75">
         <div class="row justify-content-center align-content-center h-100">
-            <div class="col-md-6 h-100 d-flex">
-                <div class="card flex-grow-1 d-flex flex-column justify-content-center" style="background-color: #3AAFA9;">
+            <div class="col-lg-6 col-sm-9 h-100 d-flex">
+                <div class="card flex-grow-1 d-flex flex-column justify-content-center shadow" style="background-color: white;">
                     <div class="card-body d-flex flex-column justify-content-center">
-                        <div class="d-flex flex-column justify-content-center align-items-center mb-4">
-                            <img class="w-25 mb-2" src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/95/Instagram_logo_2022.svg/1024px-Instagram_logo_2022.svg.png" alt="">
+                        <div class="d-flex flex-column justify-content-center align-items-center mb-2">
+                            <img class="w-50 mb-2" src="{{ asset('storage/images/customs/' . $custom->logo) }}" alt="" style="object-fit: cover">
                         </div>
                         <form method="POST" action="{{ route('register') }}">
                             @csrf
 
                             <div class="in d-flex flex-column mb-2">
-                                <div class="row mb-3" style="font-size: 1.25rem">
-                                    <div class="w-50 input-group col-md-6 offset-3">
-                                        <span class="input-group-text" id="basic-addon1"><img style="height:20px" src="{{url('/images/stylezestAssets/person-logo.png')}}" alt=""></span>
-                                        <input placeholder="Name" id="name" type="text" class="form-control @error('name') is-invalid @enderror" name="name" value="{{ old('name') }}" required autocomplete="name" autofocus>
-            
-                                            @error('name')
+                                <div class="row mb-3 justify-content-center" style="font-size: 1.25rem">
+                                    <div class="col-lg-6 col-md-9">
+                                        <div class="input-group">
+                                            <span class="input-group-text" id="basic-addon1"><img style="height:20px" src="{{url('/images/stylezestAssets/person-logo.png')}}" alt=""></span>
+                                            <input placeholder="Name" id="name" type="text" class="form-control @error('name') is-invalid @enderror" name="name" value="{{ old('name') }}" required autocomplete="name" autofocus>
+                
+                                                @error('name')
+                                                    <span class="invalid-feedback" role="alert">
+                                                        <strong>{{ $message }}</strong>
+                                                    </span>
+                                            @enderror
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="row mb-3 justify-content-center" style="font-size: 1.25rem">
+                                    <div class="col-lg-6 col-md-9">
+                                        <div class="input-group">
+                                            <span class="input-group-text" id="basic-addon1"><img style="height:20px" src="{{url('/images/stylezestAssets/email-logo.png')}}" alt=""></span>
+                                            <input placeholder="Email" id="email" type="email" class="form-control @error('email') is-invalid @enderror" name="email" value="{{ old('email') }}" required autocomplete="email">
+                                            
+                                            @error('email')
                                                 <span class="invalid-feedback" role="alert">
                                                     <strong>{{ $message }}</strong>
                                                 </span>
-                                        @enderror
+                                            @enderror
+                                        </div>
                                     </div>
                                 </div>
-
-                                <div class="row mb-3" style="font-size: 1.25rem">
-                                    <div class="w-50 input-group col-md-6 offset-3">
-                                        <span class="input-group-text" id="basic-addon1"><img style="height:20px" src="{{url('/images/stylezestAssets/email-logo.png')}}" alt=""></span>
-                                        <input placeholder="Email" id="email" type="email" class="form-control @error('email') is-invalid @enderror" name="email" value="{{ old('email') }}" required autocomplete="email">
-                                        
-                                        @error('email')
+                                
+                                <div class="row mb-3 justify-content-center" style="font-size: 1.25rem">
+                                    <div class="col-lg-6 col-md-9">
+                                        <div class="input-group">
+                                            <span class="input-group-text" id="basic-addon1"><img style="height:20px" src="{{url('/images/stylezestAssets/lock-logo.png')}}" alt=""></span>
+                                            <input placeholder="Password" id="password" type="password" class="form-control @error('password') is-invalid @enderror" name="password" required autocomplete="new-password">
+                                            
+                                            @error('password')
                                             <span class="invalid-feedback" role="alert">
                                                 <strong>{{ $message }}</strong>
                                             </span>
-                                        @enderror
-                                    </div>
-                                </div>
-                                
-                                <div class="row mb-3" style="font-size: 1.25rem">
-                                    <div class="w-50 input-group col-md-6 offset-3">
-                                        <span class="input-group-text" id="basic-addon1"><img style="height:20px" src="{{url('/images/stylezestAssets/lock-logo.png')}}" alt=""></span>
-                                        <input placeholder="Password" id="password" type="password" class="form-control @error('password') is-invalid @enderror" name="password" required autocomplete="new-password">
-                                        
-                                        @error('password')
-                                        <span class="invalid-feedback" role="alert">
-                                            <strong>{{ $message }}</strong>
-                                        </span>
-                                        @enderror
+                                            @enderror
+                                        </div>
                                     </div>
                                 </div>
 
-                                <div class="row mb-3" style="font-size: 1.25rem">
-                                    <div class="w-50 input-group col-md-6 offset-3">
-                                        <span class="input-group-text" id="basic-addon1"><img style="height:20px" src="{{url('/images/stylezestAssets/lock-logo.png')}}" alt=""></span>
-                                        <input placeholder="Confirm Password" id="password-confirm" type="password" class="form-control" name="password_confirmation" required autocomplete="new-password">
+                                <div class="row mb-3 justify-content-center" style="font-size: 1.25rem">
+                                    <div class="col-lg-6 col-md-9">
+                                        <div class="input-group">
+                                            <span class="input-group-text" id="basic-addon1"><img style="height:20px" src="{{url('/images/stylezestAssets/lock-logo.png')}}" alt=""></span>
+                                            <input placeholder="Confirm Password" id="password-confirm" type="password" class="form-control" name="password_confirmation" required autocomplete="new-password">
+                                        </div>
                                     </div>
                                 </div>
 
                                 
-                                <div class="row mb-0 mt-2">
+                                <div class="row mb-0 mt-4">
                                     <div class="col-md-6 offset-md-3" style="font-size: 0.95rem">
                                         <span>Already have an account? <a href="{{ route('login') }}" style="color:black">Login</a></span>
                                     </div>
                                     <div class="col-md-6 offset-md-3">
-                                        <button type="submit" class="btn btn-secondary d-flex w-100 justify-content-center">
+                                        <button type="submit" class="btn btn-secondary d-flex w-100 justify-content-center" style="background-color:{{$custom->buttoncolor}}">
                                             {{ __('Register') }}
                                         </button>
                                     </div>

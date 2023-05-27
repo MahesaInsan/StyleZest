@@ -5,54 +5,40 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 // use Illuminate\Support\Facades\DB;
 use App\Models\Clothes;
-use Illuminate\Support\Facades\DB;
-
-// use App\Models\color;
-// use App\Models\Gender;
-// use App\Models\Categories;
-// use App\Models\Clothes_has_Colors;
-// use App\Models\Clothes_has_Sizes;
-// use App\Models\Size;
+use App\Models\color;
+use App\Models\Gender;
+use App\Models\Categories;
+use App\Models\Clothes_has_Colors;
+use App\Models\Clothes_has_Sizes;
+use App\Models\Size;
+use App\Models\transaction_detail;
+use App\Models\transaction_has_clothes;
+use Illuminate\Support\Facades\Auth;
 
 
 class ProductController extends Controller{
 
-    // public function index_product(Request $request){
+    public function addtoCart($id, Request $request){
+        /* dd($request); */
+        $clothes = Clothes::find($id);
+        $totPrice = $request->inAmount * $clothes->price;
+        $transaction = transaction_detail::where('userId', '=', auth::user()->id)->first();
 
-    //     $clothes = Clothes::all();
-    //     return view('index_product', ['clothes' => $clothes]);
-    // }
+        transaction_has_clothes::insert([
+            'count' => $request->inAmount,
+            'totPrice' => $totPrice,
+            'transactionId'=> $transaction->id,
+            'clothesId' => $id,
+            'sizeId' => $request->inSize,
+            'colorId' => $request->inColor
+        ]);
 
-    public function index_product(Request $request){
+        $transaction->totPrice = $transaction->totPrice + $totPrice;
+        $transaction->totItem = $transaction->totItem + $request->inAmount;
+        $transaction->save();
 
-        $query = Clothes::query();
-
-        if ($request->has('category')) {
-        $category = $request->category;
-        $query->whereHas('categories', function ($q) use ($category) {
-            $q->where('categoryName', $category);
-        });
-
-
-        if ($request->has('gender')) {
-            $gender = $request->gender;
-            $query->whereHas('gender', function ($q) use ($gender) {
-                $q->where('genderName', $gender);
-            });
-        }
-
-        if ($request->has('size')) {
-            $size = $request->size;
-            $query->whereHas('sizes', function ($q) use ($size) {
-                $q->where('sizeCode', $size);
-            });
-        }
-
-        $clothes = $query->get();
-
+        $clothes = Clothes::all();
         return view('index_product', ['clothes' => $clothes]);
-
-        
     }
 
 }

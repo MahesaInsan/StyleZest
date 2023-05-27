@@ -3,6 +3,7 @@
 use App\Http\Controllers\UserController;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
+use App\Models\Custom;
 
 /*
 |--------------------------------------------------------------------------
@@ -22,8 +23,9 @@ use Illuminate\Support\Facades\Route;
 /* Route::get('/adminhome', function(){return view('admin.adminhome');})->middleware(['auth', 'isAdmin']); */
 
 Route::get('/', function () {
-    return view('welcome');
-});
+    $custom = Custom::first();
+    return view('welcome')->with('custom', $custom);
+})->name('welcome');
 
 Auth::routes();
 Route::get('/box', function () {
@@ -81,9 +83,14 @@ Route::get('/admin/editgenders/{id}', [App\Http\Controllers\GendersController::c
 Route::put('/admin/editgenders/{id}', [App\Http\Controllers\GendersController::class, 'updateGenders']);
 Route::delete('/admin/deletegenders/{id}', [App\Http\Controllers\GendersController::class, 'deleteGenders']);
 
+//web customization's route
+Route::get('/admin/customizeweb', [App\Http\Controllers\HomeController::class, 'adminCustomizeweb'])->name('adminCustomizeweb');
+Route::get('/admin/editcustomizeweb/{id}', [App\Http\Controllers\CustomsController::class, 'editCustoms']);
+Route::put('/admin/editcustomizeweb/{id}', [App\Http\Controllers\CustomsController::class, 'updateCustoms']);
 
 /* User Page -> Buy section */
-Route::get('buyclothes/{id}', [App\Http\Controllers\ClothesController::class, 'buyClothes']);
+Route::get('/buyclothes/{id}', [App\Http\Controllers\ClothesController::class, 'buyClothes']);
+Route::post('/buyclothes/{id}', [App\Http\Controllers\ProductController::class, 'addtoCart']);
 
 
 Route::get('/products', [ProductController::class, 'index_product'])->name('products.index');
