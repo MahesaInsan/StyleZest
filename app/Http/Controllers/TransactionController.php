@@ -29,6 +29,11 @@ class TransactionController extends Controller
 
     public function deleteTransaction($id){
         $transactionClothes = transaction_has_clothes::findOrFail($id);
+        $transactionD = transaction_detail::where('userId','=', auth::user()->id)->first(); 
+
+        $transactionD->totPrice = $transactionD->totPrice - $transactionClothes->totPrice;
+        $transactionD->totItem = $transactionD->totItem - $transactionClothes->count;
+        $transactionD->save();
         $transactionClothes->delete();
 
         return redirect()->back();
