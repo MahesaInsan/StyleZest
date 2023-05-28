@@ -66,6 +66,7 @@ class CustomsController extends Controller
         $custom->maincolor = $request->maincolor;
         $custom->bgcolor = $request->bgcolor;
         $custom->sidebar = $request->sidebar;
+        $custom->buttoncolor = $request->buttoncolor;
         
         Storage::delete('public/images/customs' . $custom->logo);
         $logo = $request->file('logo');

@@ -32,7 +32,7 @@
             <div class="container h-100">
                 <a class="navbar-brand d-flex align-items-center gap-2 h-100" href="{{ url('/') }}">
                     <img class="me-2"src="{{ asset('storage/images/customs/'. $custom->logo) }}" alt="" style="object-fit: cover; height:200%">
-                    <h4 class="mb-0">{{$custom->company}}</h4>
+                    <h4 class="mb-0 fw-bold">{{$custom->company}}</h4>
                 </a>
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="{{ __('Toggle navigation') }}">
                     <span class="navbar-toggler-icon"></span>
@@ -64,15 +64,13 @@
                                 </li>
                             @endif
                         @else
-                            <li>
+                            <li class="d-flex align-items-center">
                                 <a href="{{ url('/transaction') }}">
-                                    <img src="" alt="">
-                                    Transaction
+                                    <img class="h-75 pe-2" src="{{url('/images/stylezestAssets/cart-logo.png')}}" alt="">
                                 </a>
                             </li>
                             <li class="nav-item dropdown">
-                                <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
-                                    <img src="" alt="">
+                                <a id="navbarDropdown" style="font-size: 1rem" class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
                                     {{ Auth::user()->name }}
                                 </a>
 
@@ -114,7 +112,7 @@
                                         </a>
 
                                         <a class="dropdown-item" href="{{ route('users.index') }}">
-                                            Account panel
+                                            Account Panel
                                         </a>
                                         <a class="dropdown-item" href="{{ route('logout') }}"
                                         onclick="event.preventDefault();

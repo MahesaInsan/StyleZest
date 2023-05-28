@@ -15,14 +15,14 @@
     <div class="body d-flex flex-column gap-4">
         <div id="name">
             <p class=" mb-1">Category Name:</p>
-            <input type="text" name="categoryName" id="" class="form-control">
+            <input type="text" name="categoryName" id="" class="form-control" required>
         </div>
         <div id="description">
             <p class=" mb-1">Description:</p>
-            <input type="text" name="categoryDesc" id="" class="form-control">
+            <input type="text" name="categoryDesc" id="" class="form-control" required>
         </div>
         
-        <input type="submit" class="button" value="Add Category">
+        <input type="submit" class="btn btn-success" value="Add Category">
     </div>
 </form>
 @endsection

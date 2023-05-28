@@ -18,7 +18,7 @@
             <input type="text" name="colorcode" id="" class="form-control" value="{{$color->colorcode}}">
         </div>
         
-        <input type="submit" class="button" value="Save Color">
+        <input type="submit" class="btn btn-success" value="Save Color">
     </div>
 </form>
 @endsection

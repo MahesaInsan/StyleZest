@@ -16,7 +16,7 @@
         <p class=" mb-1"><strong>Banner Image: </strong><span>{{$custom->bannerimg}}</span></p>
         <p class=" mb-1"><strong>Login Image: </strong><span>{{$custom->loginimg}}</span></p>
     </div>
-    <button class="d-flex w-100 justify-content-center"><a  href="/admin/editcustomizeweb/{{$custom->id}}">Customize Website</a></button>
+    <a class="d-flex w-100 justify-content-center btn btn-primary" href="/admin/editcustomizeweb/{{$custom->id}}">Customize Website</a>
 </div>
 
 @endsection

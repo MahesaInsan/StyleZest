@@ -1,6 +1,11 @@
 @extends('layouts.box')
     
 @section('box-content')
+@if(session('success'))
+    <div class="alert alert-success" id="success-alert">
+        {{ session('success') }}
+    </div>
+@endif
 <table class="table">
     <thead>
         <th>ID</th>
@@ -33,4 +38,12 @@
         @endforeach
     </tbody>
 </table>
+@if(session('success'))
+    <script>
+        // Automatically close the success alert after 3 seconds
+        setTimeout(function() {
+            document.getElementById('success-alert').style.display = 'none';
+        }, 2500);
+    </script>
+@endif
 @endsection

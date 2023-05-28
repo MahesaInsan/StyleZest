@@ -1,8 +1,8 @@
-@extends('layouts.box')
+@extends('layouts.app')
 
-@section('box-content')
+@section('content')
 {{-- User content --}}
-    <div class="table-responsive">
+    <div class="p-5 table-responsive">
 
         <table class="table">
             <thead>
@@ -15,7 +15,7 @@
             </thead>
             <tbody>
                 @foreach ($users as $key => $item)
-                    <tr> 
+                    <tr class="align-middle"> 
                         <td>{{ ++$key }}</td>
                         <td>{{ $item->name }}</td>
                         <td>{{ $item->email }}</td>

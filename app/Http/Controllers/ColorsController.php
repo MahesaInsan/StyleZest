@@ -29,7 +29,7 @@ class ColorsController extends Controller
             'colorcode' => $request->colorcode
         ]);
 
-        return redirect()->back()->with('success', 'Color added successfully!');
+        return redirect('/admin/color')->with('success', 'Color added successfully!');
     }
     
     public function editColors($id){

@@ -1,6 +1,11 @@
 @extends('layouts.box')
     
 @section('box-content')
+@if(session('success'))
+    <div class="alert alert-success" id="success-alert">
+        {{ session('success') }}
+    </div>
+@endif
 <table class="table">
     <thead>
         <th>Category</th>
@@ -10,20 +15,28 @@
     </thead>
     <tbody>
         @foreach ($categories as $ctg)
-            <tr>
+            <tr class="align-middle">
                 <td>{{$ctg->categoryName}}</td>
                 <td>{{$ctg->categoryDesc}}</td>
-                <td><a href="/admin/editcategories/{{$ctg->id}}">Edit</a></td>
+                <td><a class="btn btn-primary" href="/admin/editcategories/{{$ctg->id}}">Edit</a></td>
                 <td>
                     <form action="/admin/deletecategories/{{$ctg->id}}"method="post">
                         @csrf
                         @method('DELETE')
-                        <button type="submit">Delete</button>
+                        <button class="btn btn-danger" type="submit">Delete</button>
                     </form>
                 </td>
             </tr>
         @endforeach
     </tbody>
 </table>
-<button class="d-flex w-100 justify-content-center"><a  href="/admin/addcategory">Add New Category</a></button>
+<a class="d-flex w-100 justify-content-center btn btn-secondary" href="/admin/addcategory">Add New Category</a>
+@if(session('success'))
+    <script>
+        // Automatically close the success alert after 3 seconds
+        setTimeout(function() {
+            document.getElementById('success-alert').style.display = 'none';
+        }, 2500);
+    </script>
+@endif
 @endsection

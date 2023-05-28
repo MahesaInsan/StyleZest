@@ -9,20 +9,20 @@
     <div class="body d-flex flex-column gap-3">
         <div id="image">
             <p class=" mb-1">Image:</p>
-            <input class="form-control" type="file" name="inImg" id="" class="form-control">
+            <input class="form-control" type="file" name="inImg" id="" class="form-control" required>
         </div>
         <div id="name">
             <p class=" mb-1">Clothes Name:</p>
-            <input type="text" name="inName" id="" class="form-control">
+            <input type="text" name="inName" id="" class="form-control" required>
         </div>
         <div id="description">
             <p class=" mb-1">Description:</p>
-            <input type="text" name="inDesc" id="" class="form-control">
+            <input type="text" name="inDesc" id="" class="form-control" required>
         </div>
         <div id="row4" class="row">
             <div class="col">
                 <p class=" mb-1">Category:</p>
-                <select class="form-select" aria-label="Default select example" name="inCategories">
+                <select class="form-select" aria-label="Default select example" name="inCategories" required>
                     @foreach ($categories as $category)
                         <option value={{$category->id}}>
                             {{$category->categoryName}}
@@ -32,7 +32,7 @@
             </div>
             <div class="col">
                 <p class=" mb-1">Gender:</p>
-                <select class="form-select" aria-label="Default select example" name="inGender">
+                <select class="form-select" aria-label="Default select example" name="inGender" required>
                     @foreach ($genders as $gender)
                         <option value={{$gender->id}}>{{$gender->genderName}}</option>
                     @endforeach
@@ -42,7 +42,7 @@
         <div id="row5" class="row">
             <div class="col">
                 <p class=" mb-1">Color:</p>
-                <div class="form-control" style="height:5rem; overflow-y:scroll">
+                <div class="form-control" style="height:5rem; overflow-y:scroll" required>
                     @foreach ($colors as $color)
                         <input class="form-check-input" type="checkbox" name="inColor[]" value="{{$color->id}}" id="flexCheckDefault">
                         <label class="form-check-label" for="flexCheckDefault">
@@ -56,7 +56,7 @@
             <div class="col">
                 <div id="size">
                     <p class=" mb-2">Size:</p>
-                    <div class="form-control" style="height:5rem; overflow-y:scroll">
+                    <div class="form-control" style="height:5rem; overflow-y:scroll" required>
                         @foreach ($sizes as $size)
                             <input class="form-check-input" type="checkbox" name="inSize[]" value="{{$size->id}}" id="flexCheckDefault">
                             <label class="form-check-label" for="flexCheckDefault">
@@ -71,15 +71,15 @@
         <div class="row">
             <div class="col">
                 <p class=" mb-1">Stock:</p>
-                <input type="text" name="inStock" id="" class="form-control">
+                <input type="text" name="inStock" id="" class="form-control" required>
             </div>
             <div class="col">
                 <p class=" mb-1">Price in Rupiah</p>
-                <input type="text" name="inPrice" id="" class="form-control">
+                <input type="text" name="inPrice" id="" class="form-control" required>
             </div>
         </div>
         
-        <input type="submit" class="button" value="Add Clothes">
+        <input type="submit" class="btn btn-success" value="Add Clothes">
     </div>
 </form>
 @endsection

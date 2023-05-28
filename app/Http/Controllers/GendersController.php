@@ -28,7 +28,7 @@ class GendersController extends Controller
             'genderName' => $request->genderName,
         ]);
 
-        return redirect()->back()->with('success', 'Gender added successfully!');
+        return redirect('/admin/gender')->with('success', 'Gender added successfully!');
     }
 
     public function editGenders($id){

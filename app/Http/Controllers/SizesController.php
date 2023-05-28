@@ -18,11 +18,11 @@ class SizesController extends Controller
     }
 
     public function addSizes(){
-        $sizeName = Size::all();
+        $sizeCode = Size::all();
         $sizeDesc = Size::all();
         $custom = Custom::first();
 
-        return view('admin.addsize', ['sizeName ' => $sizeName, 'sizeDesc' => $sizeDesc, 'custom' => $custom]);
+        return view('admin.addsize', ['sizeName ' => $sizeCode, 'sizeDesc' => $sizeDesc, 'custom' => $custom]);
     }
 
     public function saveSizes(Request $request){
@@ -31,7 +31,7 @@ class SizesController extends Controller
             'sizeDesc' => $request->sizeDesc
         ]);
 
-        return redirect()->back()->with('success', 'Size added successfully!');
+        return redirect('/admin/sizeindex')->with('success', 'Size added successfully.');
     }   
 
     public function editSizes($id){
@@ -46,7 +46,7 @@ class SizesController extends Controller
     public function updateSizes($id, Request $request){
         $size = Size::find($id);
 
-        $size->sizeName = $request->sizeName;
+        $size->sizeCode = $request->sizeName;
         $size->sizeDesc = $request->sizeDesc;
         $size->save();
 

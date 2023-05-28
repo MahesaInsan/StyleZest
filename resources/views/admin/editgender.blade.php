@@ -14,7 +14,7 @@
             <input type="text" name="genderName" id="" class="form-control" value="{{$gender->genderName}}">
         </div>
         
-        <input type="submit" class="button" value="Save Gender">
+        <input type="submit" class="btn btn-success" value="Save Gender">
     </div>
 </form>
 @endsection

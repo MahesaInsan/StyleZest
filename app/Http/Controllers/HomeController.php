@@ -61,7 +61,7 @@ class HomeController extends Controller
         $sizes = Size::all();
         $custom = Custom::first();
 
-        return view('home', ['categories' => $categories])->with('colors', $colors)->with('genders', $genders)->with('sizes', $sizes)->with('clothes', $clothes)->with('custom', $custom);
+        return view('home', ['categories' => $categories, 'name'=>$name_filter])->with('colors', $colors)->with('genders', $genders)->with('sizes', $sizes)->with('clothes', $clothes)->with('custom', $custom);
     }
 
     

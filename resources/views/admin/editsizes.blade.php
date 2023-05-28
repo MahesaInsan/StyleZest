@@ -11,7 +11,7 @@
     <div class="body d-flex flex-column gap-4">
         <div id="name">
             <p class=" mb-1">Size Code:</p>
-            <input type="text" name="sizeName" id="" class="form-control" value="{{$size->sizeName}}">
+            <input type="text" name="sizeName" id="" class="form-control" value="{{$size->sizeCode}}">
         </div>
         <div id="description">
             <p class=" mb-1">Description:</p>

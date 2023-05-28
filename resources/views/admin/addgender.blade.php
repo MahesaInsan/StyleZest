@@ -15,11 +15,11 @@
     <div class="body d-flex flex-column gap-4">
         <div id="name">
             <p class=" mb-1">Gender :</p>
-            <input type="text" name="genderName" id="" class="form-control">
+            <input type="text" name="genderName" id="" class="form-control" required>
         </div>
         </div>
         
-        <input type="submit" class="button" value="Add Gender">
+        <input type="submit" class="btn btn-success" value="Add Gender">
     </div>
 </form>
 @endsection

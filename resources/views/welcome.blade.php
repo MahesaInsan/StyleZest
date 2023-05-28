@@ -46,7 +46,7 @@
     
                     <div>
                         @if (Route::has('login'))
-                            <div class="d-flex row">
+                            <div class="d-flex row text-light">
                                 @auth
                                     <a class="col-6 offset-3 btn btn-secondary" href="{{ url('/home') }}" class="text-sm text-gray-700 dark:text-gray-500 underline" style="background-color:{{$custom->buttoncolor}}">Continue Browsing</a>
                                 @else

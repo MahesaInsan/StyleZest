@@ -1,8 +1,8 @@
 {{-- Profile content --}}
-@extends('layouts.box')
+@extends('layouts.app')
 
-@section('box-content')
-    <form action="{{ route('users.update', Auth::user()->id) }}" method="post" enctype="multipart/form-data">
+@section('content')
+    <form class="p-5" action="{{ route('users.update', Auth::user()->id) }}" method="post" enctype="multipart/form-data">
         @csrf
         @method('PUT')
 
@@ -30,7 +30,7 @@
                 <textarea name="address" id="address" cols="30" rows="5" class="form-control">{{ Auth::user()->address }}</textarea>
             </div>
 
-            <input type="submit" class="button btn btn-primary" value="Update Profile">
+            <input type="submit" class="btn btn-success" value="Update Profile">
         </div>
     </form>
 @endsection

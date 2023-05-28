@@ -13,8 +13,8 @@
                     <a href="/admin/gender"><button type="button" class="btn btn-invisible w-100 text-start">Gender</button></a><br><hr>
                 </div>
                 <div>
-                    <a href="/admin/transactionindex"><button type="button" class="btn btn-invisible">Transaction History</button></a><br><hr>
-                    <a href="/admin/customizeweb"><button type="button" class="btn btn-invisible">Customize Webpage</button></a>
+                    <a href="/admin/transactionindex"><button type="button" class="btn btn-invisible w-100 text-start">Transaction History</button></a><br><hr>
+                    <a href="/admin/customizeweb"><button type="button" class="btn btn-invisible w-100 text-start">Customize Webpage</button></a>
                 </div>
             </div>
         </div>

@@ -47,7 +47,7 @@
             </div>
         </div>
         
-        <input type="submit" class="button" value="Save Clothes">
+        <input type="submit" class="btn btn-success" value="Save Clothes">
     </div>
 </form>
 @endsection

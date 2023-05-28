@@ -18,7 +18,7 @@
             <input type="text" name="categoryDesc" id="" class="form-control" value="{{$category->categoryDesc}}">
         </div>
         
-        <input type="submit" class="button" value="Save Category">
+        <input type="submit" class="btn btn-success" value="Save Category">
     </div>
 </form>
 @endsection

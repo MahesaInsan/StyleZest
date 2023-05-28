@@ -80,7 +80,7 @@
                                         <span>Already have an account? <a href="{{ route('login') }}" style="color:black">Login</a></span>
                                     </div>
                                     <div class="col-md-6 offset-md-3">
-                                        <button type="submit" class="btn btn-secondary d-flex w-100 justify-content-center" style="background-color:{{$custom->buttoncolor}}">
+                                        <button type="submit" class="btn btn-secondary d-flex w-100 justify-content-center text-light" style="background-color:{{$custom->buttoncolor}}">
                                             {{ __('Register') }}
                                         </button>
                                     </div>

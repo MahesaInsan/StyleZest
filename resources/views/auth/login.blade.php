@@ -69,7 +69,7 @@
                                         <span>Don't have an account? <a href="{{ route('register') }}" style="color:black">Register</a></span>
                                     </div>
                                     
-                                    <button type="submit" class="btn btn-secondary" style="background-color:{{$custom->buttoncolor}}">
+                                    <button type="submit" class="btn btn-secondary text-light" style="background-color:{{$custom->buttoncolor}}">
                                         {{ __('Login') }}
                                     </button>
                                     

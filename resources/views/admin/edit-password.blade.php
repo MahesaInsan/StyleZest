@@ -1,8 +1,8 @@
 {{-- Password content --}}
-@extends('layouts.box')
+@extends('layouts.app')
 
-@section('box-content')
-    <form action="{{ route('users.update', Auth::user()->id) }}" method="post" enctype="multipart/form-data">
+@section('content')
+    <form class="p-5" action="{{ route('users.update', Auth::user()->id) }}" method="post" enctype="multipart/form-data">
         @csrf
         @method('PUT')
 
@@ -16,7 +16,7 @@
                 <span class="text-secondary">Write down your new password</span>
             </div>
 
-            <input type="submit" class="button btn btn-primary" value="Update Password">
+            <input type="submit" class="btn btn-success" value="Update Password">
         </div>
     </form>
 @endsection

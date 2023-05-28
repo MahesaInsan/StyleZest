@@ -30,7 +30,7 @@ class CategoriesController extends Controller
             'categoryDesc' => $request->categoryDesc
         ]);
 
-        return redirect()->back()->with('success', 'Category added successfully!');
+        return redirect('/admin/category')->with('success', 'Category added successfully!');
     }
 
     public function editCategories($id){

@@ -23,7 +23,7 @@
                             <p class="m-0" style="font-size: 1.25rem">Color:</p>
                             <div class="d-flex flex-row gap-3">
                                 @foreach ($clothes->colors as $color)
-                                    <input class="form-check-input" type="radio" name="inColor" value="{{$color->id}}" style="width:3rem; height:3rem; background-color:{{$color->colorcode}};">
+                                    <input class="form-check-input" type="radio" name="inColor" value="{{$color->id}}" style="width:3rem; height:3rem; background-color:{{$color->colorcode}};" required>
                                 @endforeach
                             </div>
                         </div>

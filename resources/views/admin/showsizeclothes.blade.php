@@ -14,7 +14,7 @@
     </div>        
     <div class="body d-flex flex-column gap-4">
         <div id="name">
-            <p class=" mb-1">Size :</p>
+            <p class=" mb-1">Size:</p>
             <input type="text" name="categoryName" id="" class="form-control">
         </div>
         <div id="description">
@@ -22,7 +22,7 @@
             <input type="text" name="categoryDesc" id="" class="form-control">
         </div>
         
-        <input type="submit" class="button" value="Add Size">
+        <input type="submit" class="btn btn-success" value="Add Size">
     </div>
 </form>
 @endsection
