@@ -13,8 +13,13 @@
     <!-- Fonts -->
     <link rel="dns-prefetch" href="//fonts.gstatic.com">
     <link href="https://fonts.bunny.net/css?family=Nunito" rel="stylesheet">
-
+    
     <style>
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
+        *{
+            font-family: 'Poppins', sans-serif;
+            font-family: 'Roboto', sans-serif;
+        }
         .accordion-item {
             background-color: transparent !important;
         }
@@ -32,7 +37,7 @@
             <div class="container h-100">
                 <a class="navbar-brand d-flex align-items-center gap-2 h-100" href="{{ url('/') }}">
                     <img class="me-2"src="{{ asset('storage/images/customs/'. $custom->logo) }}" alt="" style="object-fit: cover; height:200%">
-                    <h4 class="mb-0 fw-bold">{{$custom->company}}</h4>
+                    <p class="mb-0 fw-bold" style="font-size:1.5rem">{{$custom->company}}</p>
                 </a>
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="{{ __('Toggle navigation') }}">
                     <span class="navbar-toggler-icon"></span>

@@ -13,9 +13,9 @@
                         </div>
                         <div class="col-6 p-2 d-flex flex-column justify-content-evenly">
                             <div class="row">
-                                <h4>{{$thc->clothes->clothesName}}</h4>
+                                <p class="m-0" style="font-size: 1.5rem">{{$thc->clothes->clothesName}}</p>
                             </div>
-                            <div class="row">
+                            <div class="row" style="font-size: 1.1rem">
                                 <div class="col-6">
                                     Color: {{$thc->color->colorname}}
                                 </div>
@@ -26,16 +26,16 @@
                         </div>
                         <div class="col-3 d-flex flex-column justify-content-evenly">
                             <div class="row">
-                                <div class="col">
-                                    Rp. {{$thc->clothes->price}}
+                                <div class="col fw-bold" style="font-size: 1.25rem"> 
+                                    {{$thc->clothes->price}} IDR
                                 </div>
                             </div>
-                            <div class="row">
+                            <div class="row" style="font-size: 1.1rem">
                                 <div class="col-6">
                                     Delete
                                 </div>
                                 <div class="col-6">
-                                    {{$thc->count}}
+                                    Quantity: {{$thc->count}}
                                 </div>
                             </div>
                         </div>
@@ -47,7 +47,7 @@
                     @foreach ($transactionHC as $thc)
                         <div class="row mb-2">
                             <div class="col-6">
-                                {{$thc->clothes->clothesName}}
+                                {{$thc->clothes->clothesName}} x {{$thc->count}}
                             </div>
                             <div class="col-5 offset-1">
                                 Rp. {{$thc->totPrice}}

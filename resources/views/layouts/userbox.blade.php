@@ -3,27 +3,27 @@
 @section('content')
 <div class="h-100 w-100 d-flex flex-column justify-content-center flex-grow-1 fs-5" style="padding-right: 12px; padding-left:12px">
     <div class="row" style="height:7.5%">
-      <div class="col d-flex justify-content-center align-items-center border-end">
+      <div class="col d-flex justify-content-center align-items-center border-end" style="font-size:1rem;">
         Filter By:
       </div>
-      <div class="col-9 d-flex justify-content-center align-items-center">
+      <div class="col-9 d-flex justify-content-center align-items-center" style="font-size:1.25rem;">
         @if (Route::is('home.filter'))
-          Browsing In: {{$name}}
+          Browsing In: <span class="fw-bold p-1">{{$name}}</span>
         @else
-          Browsing In: Home
+          Browsing In: <span class="fw-bold p-1">Home</span>
         @endif
       </div>
     </div>
     <div class="row" style="height:92.5%">
         <div class="col border-top border-end" style="padding:0px">
-            <div class="accordion accordion-flush pt-1 fs-6" id="accordionExample" style="background: white">
+            <div class="accordion accordion-flush pt-1" id="accordionExample" style="background: white; font-size:1rem;"> 
                 <div class="accordion-item">
                   <h2 class="accordion-header" id="collapseCategories">
-                    <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                    <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne" style="font-size:1.15rem;">
                       Categories
                     </button>
                   </h2>
-                  <div id="collapseOne" class="accordion-collapse collapse show" aria-labelledby="headingOne" >
+                  <div id="collapseOne" class="accordion-collapse collapse show" aria-labelledby="headingOne" style="border-right-width: 2px">
                     <div class="accordion-body">
                         @foreach ($categories as $category)
                         <li class="list-unstyled ps-3 mb-1"><a
@@ -35,7 +35,7 @@
                 </div>
                 <div class="accordion-item">
                   <h2 class="accordion-header" id="headingTwo">
-                    <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="true" aria-controls="collapseTwo">
+                    <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="true" aria-controls="collapseTwo" style="font-size:1.15rem;">
                       Gender
                     </button>
                   </h2>
@@ -51,7 +51,7 @@
                 </div>
                 <div class="accordion-item">
                   <h2 class="accordion-header" id="headingThree">
-                    <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseThree" aria-expanded="true" aria-controls="collapseThree">
+                    <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseThree" aria-expanded="true" aria-controls="collapseThree" style="font-size:1.15rem;">
                       Size
                     </button>
                   </h2>

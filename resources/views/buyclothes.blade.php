@@ -11,8 +11,8 @@
         <form action="/buyclothes/{{$clothes->id}}" method="post" enctype="multipart/form-data" class="col h-100" style="overflow-y:auto; max-height:100%">
             @csrf
             <div class="d-flex flex-column justify-content-between h-100">
-                <p class="fw-bold mb-0" style="font-size: 3rem;">{{$clothes->clothesName}}</p>
-                <p class="fw-bold text-start" style="font-size: 1.25rem">Rp. {{$clothes->price}}</p>
+                <p class="mb-0 fw-normal" style="font-size: 3rem;">{{$clothes->clothesName}}</p>
+                <p class="fw-bold text-start" style="font-size: 1.25rem">{{$clothes->price}} IDR</p>
                 <p style="font-size: 1.25rem">{{$clothes->clothesDescription}}</p>
                 <hr>
                 
@@ -51,7 +51,7 @@
                             </div>
                         </div>
                     </div>
-                    <input type="submit" class="button justify-items-end" value="Add to Cart">
+                    <input type="submit" class="btn mt-4 text-light fw-bold" value="Add to Cart" style="background-color:{{$custom->buttoncolor}}; font-size: 1.25rem">
                 </div>
                 
             </div>
