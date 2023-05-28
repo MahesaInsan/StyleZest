@@ -76,28 +76,31 @@ class HomeController extends Controller
         return view('admin.adminhome', ['clothes' => $clothes, 'custom' => $custom, 'colors' => $colors, 'genders' => $genders, 'categories' => $categories, 'sizes' => $sizes]);
     }
 
-    public function showsize(){
+    public function showsize()
+    {
         $sizes = Size::all();
-        $custom = Custom::first();
         
-        return view('admin.sizeindex', ['sizes' => $sizes, 'custom' => $custom]);
+        return view('admin.sizeindex', ['sizes' => $sizes]);
     }
 
-    public function adminColor(){
+    public function adminColor()
+    {
         $colors = color::all();
         $custom = Custom::first();
 
         return view('admin.colorindex', ['colors' => $colors, 'custom' => $custom]);
     }
 
-    public function adminCategory(){
+    public function adminCategory()
+    {
         $categories = Categories::all();
         $custom = Custom::first();
 
         return view('admin.categoryindex', ['categories' => $categories, 'custom' => $custom]);
     }
 
-    public function adminGender(){
+    public function adminGender()
+    {
         $genders = Gender::all();
         $custom = Custom::first();
 

@@ -1,5 +1,5 @@
     @extends('layouts.userbox')
-        
+
     @section('userbox-content')
         <div class="card-group">
             <div class="flex-row"></div>
