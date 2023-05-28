@@ -1,7 +1,8 @@
 @extends('layouts.box')
     
 @section('box-content')    
-<div class="body d-flex flex-column gap-4">
+<div class="w-100 text-center fw-bold" style="font-size:1.2rem">Customize Web<hr></div>
+<div class="body d-flex flex-column gap-4" style="font-size: 1.15rem">
     <div id="companyName">
         <p class=" mb-1"><strong>Company Name: </strong><span>{{$custom->company}}</span></p>
     </div>

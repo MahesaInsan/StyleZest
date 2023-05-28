@@ -7,7 +7,7 @@
     </div>
 @endif
 
-<form action="/admin/addcolor" method="post" enctype="multipart/form-data">
+<form action="/admin/addcolor" method="post" enctype="multipart/form-data" style="font-size: 1.15rem">
     @csrf
     <div class="header">
         <h4 class="modal-title">{{ __('Add New Colors') }}</h4>

@@ -35,7 +35,7 @@
     <div id="app" class="h-100 d-flex flex-column">
         <nav class="navbar navbar-expand-md navbar-light shadow-sm" style="background-color: {{$custom->maincolor}}; height:7.5%;">
             <div class="container h-100">
-                <a class="navbar-brand d-flex align-items-center gap-2 h-100" href="{{ url('/') }}">
+                <a class="navbar-brand d-flex align-items-center gap-2 h-100" href="{{ url('home') }}">
                     <img class="me-2"src="{{ asset('storage/images/customs/'. $custom->logo) }}" alt="" style="object-fit: cover; height:200%">
                     <p class="mb-0 fw-bold" style="font-size:1.5rem">{{$custom->company}}</p>
                 </a>

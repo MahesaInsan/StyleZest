@@ -3,7 +3,7 @@
 @section('content')
 <div class="h-100 w-100 d-flex flex-column justify-content-center flex-grow-1 fs-5" style="padding-right: 12px; padding-left:12px">
     <div class="row" style="height:7.5%">
-      <div class="col d-flex justify-content-center align-items-center border-end" style="font-size:1rem;">
+      <div class="col d-flex justify-content-center align-items-center border-end" style="font-size:1rem; background-color:{{$custom->sidebar}};">
         Filter By:
       </div>
       <div class="col-9 d-flex justify-content-center align-items-center" style="font-size:1.25rem;">
@@ -15,8 +15,8 @@
       </div>
     </div>
     <div class="row" style="height:92.5%">
-        <div class="col border-top border-end" style="padding:0px">
-            <div class="accordion accordion-flush pt-1" id="accordionExample" style="background: white; font-size:1rem;"> 
+        <div class="col border-top border-end" style="padding:0px; background-color:{{$custom->sidebar}};">
+            <div class="accordion accordion-flush pt-1" id="accordionExample" style="background-color:{{$custom->sidebar}}; font-size:1rem;"> 
                 <div class="accordion-item">
                   <h2 class="accordion-header" id="collapseCategories">
                     <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne" style="font-size:1.15rem;">

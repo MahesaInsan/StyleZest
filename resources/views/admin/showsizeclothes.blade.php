@@ -6,8 +6,8 @@
         {{ session('success') }}
     </div>
 @endif
-
-<form action="/admin/addsize" method="post" enctype="multipart/form-data">
+<div class="w-100 text-center fw-bold" style="font-size:1.2rem">Sizes List<hr></div>
+<form action="/admin/addsize" method="post" enctype="multipart/form-data" style="font-size: 1.15rem">
     @csrf
     <div class="header">
         <h4 class="modal-title">{{ __('Add New Size') }}</h4>

@@ -1,10 +1,10 @@
 @extends('layouts.app')
 
 @section('content')
+<div class="w-100 text-center fw-bold p-4 pb-0" style="font-size:1.2rem">User List<hr></div>
 {{-- User content --}}
     <div class="p-5 table-responsive">
-
-        <table class="table">
+        <table class="table" style="font-size: 1.15rem">
             <thead>
                 <th>#</th>
                 <th>Name</th>

@@ -6,7 +6,8 @@
         {{ session('success') }}
     </div>
 @endif
-<table class="table">
+<div class="w-100 text-center fw-bold" style="font-size:1.2rem">Clothes List<hr></div>
+<table class="table" style="font-size: 1.15rem">
     <thead>
         <th>Image</th>
         <th>Name</th>

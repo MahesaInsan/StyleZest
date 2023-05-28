@@ -26,4 +26,18 @@ class TransactionController extends Controller
 
         return view('transaction', ['transactionHC' => $transactionClothes, 'transactionD'=> $transactionD, 'custom'=>$custom]);
     }
+
+    public function deleteTransaction($id){
+        $transactionClothes = transaction_has_clothes::findOrFail($id);
+        $transactionClothes->delete();
+
+        return redirect()->back();
+    }
+
+    public function deleteTransactionDet($id){
+        $transactionDet = transaction_detail::findOrFail($id);
+        $transactionDet->delete();
+
+        return redirect()->back();
+    }
 }

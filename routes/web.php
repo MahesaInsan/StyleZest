@@ -44,7 +44,7 @@ Route::get('/admin/editclothes/{id}', [App\Http\Controllers\ClothesController::c
 Route::put('/admin/editclothes/{id}', [App\Http\Controllers\ClothesController::class, 'updateClothes']);
 
 Route::delete('/admin/deleteclothes/{id}', [App\Http\Controllers\ClothesController::class, 'deleteClothes']);
-
+Route::delete('/admin/deletetransaction/{id}', [App\Http\Controllers\TransactionController::class, 'deleteTransactionDet']);
 
 //Account's route
 Route::resource('admin/users', UserController::class);
@@ -96,4 +96,4 @@ Route::post('/buyclothes/{id}', [App\Http\Controllers\ProductController::class, 
 Route::get('/transaction', [App\Http\Controllers\TransactionController::class, 'showTransaction']);
 Route::get('/admin/transactionindex', [App\Http\Controllers\TransactionController::class, 'showIndex']);
 Route::get('/products', [ProductController::class, 'index_product'])->name('products.index');
-
+Route::delete('/deletetransaction/{id}', [App\Http\Controllers\TransactionController::class, 'deleteTransaction'] );

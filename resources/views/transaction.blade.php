@@ -3,7 +3,7 @@
 @section('content')
 @csrf
     {{-- <div class="row p-4 h-100"> --}}
-        <form class="row p-4 pb-0 h-100" action="/transaction" method="post" enctype="multipart/form-data">
+        <div class="row p-4 pb-0 h-100">
             @csrf
             <div class="col-9" style="overflow-y:auto; max-height:100%">
                 @foreach ($transactionHC as $thc)
@@ -15,11 +15,11 @@
                             <div class="row">
                                 <p class="m-0" style="font-size: 1.5rem">{{$thc->clothes->clothesName}}</p>
                             </div>
-                            <div class="row" style="font-size: 1.1rem">
-                                <div class="col-6">
+                            <div class="row d-flex align-items-center" style="font-size: 1.1rem">
+                                <div class="col-4">
                                     Color: {{$thc->color->colorname}}
                                 </div>
-                                <div class="col-6">
+                                <div class="col-8">
                                     Size: {{$thc->size->sizeCode}}
                                 </div>
                             </div>
@@ -30,42 +30,49 @@
                                     {{$thc->clothes->price}} IDR
                                 </div>
                             </div>
-                            <div class="row" style="font-size: 1.1rem">
-                                <div class="col-6">
-                                    Delete
-                                </div>
+                            <div class="row d-flex align-items-center" style="font-size: 1.1rem">
                                 <div class="col-6">
                                     Quantity: {{$thc->count}}
+                                </div>
+                                <div class="col-6">
+                                    <form action="/deletetransaction/{{$thc->id}}"method="post">
+                                        @csrf
+                                        @method('DELETE')
+                                        <button class="btn btn-danger" type="submit">Remove</button>
+                                    </form>
                                 </div>
                             </div>
                         </div>
                     </div>
                 @endforeach
             </div>
-            <div class="col mb-4 border border-3 p-3 pe-1 d-flex flex-column justify-content-between">
-                <div>
-                    @foreach ($transactionHC as $thc)
-                        <div class="row mb-2">
-                            <div class="col-6">
-                                {{$thc->clothes->clothesName}} x {{$thc->count}}
+            <div class="col mb-4 d-flex flex-column justify-content-between">
+                <div class="border border-2 w-100 p-3 h-100 mb-4 d-flex flex-column justify-content-between">
+                    <div class="">
+                        @foreach ($transactionHC as $thc)
+                            <div class="row mb-2">
+                                <div class="col-6" style="font-size: 1rem">
+                                    {{$thc->clothes->clothesName}} x {{$thc->count}}
+                                </div>
+                                <div class="col-5 offset-1 d-flex justify-content-end" style="font-size: 1.1rem">
+                                    Rp. {{$thc->totPrice}}
+                                </div>
                             </div>
-                            <div class="col-5 offset-1">
-                                Rp. {{$thc->totPrice}}
+                        @endforeach
+                    </div>
+                    <div>
+                        <div class="row">
+                            <div class="col-6 fw-bold" style="font-size: 1.15rem">
+                                Total Price: 
                             </div>
-                        </div>
-                    @endforeach
-                </div>
-                <div>
-                    <div class="row">
-                        <div class="col-6">
-                            Total Price: 
-                        </div>
-                        <div class="col-5 offset-1">
-                            Rp. {{$transactionD->totPrice}}
+                            <div class="col-6 fw-bold text-end" style="font-size: 1.15rem">
+                                Rp. {{$transactionD->totPrice}}
+                            </div>
                         </div>
                     </div>
                 </div>
+                <button class="btn text-white" style="font-size: 1.25rem; background-color: {{$custom->buttoncolor}}">Continue to Payment</button>
             </div>
-        </form>
+        </div>
     {{-- </div> --}}
 @endsection

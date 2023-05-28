@@ -2,7 +2,7 @@
 @extends('layouts.app')
 
 @section('content')
-    <form class="p-5" action="{{ route('users.update', Auth::user()->id) }}" method="post" enctype="multipart/form-data">
+    <form class="p-5" action="{{ route('users.update', Auth::user()->id) }}" method="post" enctype="multipart/form-data" style="font-size: 1.15rem">
         @csrf
         @method('PUT')
 

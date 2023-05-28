@@ -6,7 +6,8 @@
         {{ session('success') }}
     </div>
 @endif
-<table class="table">
+<div class="w-100 text-center fw-bold" style="font-size:1.2rem">Transaction List<hr></div>
+<table class="table" style="font-size: 1.15rem">
     <thead>
         <th>ID</th>
         <th>Total Item</th>
@@ -17,7 +18,7 @@
     </thead>
     <tbody>
         @foreach ($transactionD as $trd)
-            <tr>
+            <tr class="align-middle">
                 <td>{{$trd->id}}</td>
                 <td>{{$trd->totItem}}</td>
                 <td>{{$trd->totPrice}}</td>
@@ -28,11 +29,11 @@
                 @endif
                 
                 <td>
-                    {{-- <form action="/admin/deletecolors/{{$col->id}}"method="post">
+                    <form action="/admin/deletetransaction/{{$trd->id}}"method="post">
                         @csrf
                         @method('DELETE')
-                        <button type="submit">Delete</button>
-                    </form> --}}
+                        <button class="btn btn-danger" type="submit">Delete</button>
+                    </form>
                 </td>
             </tr>
         @endforeach

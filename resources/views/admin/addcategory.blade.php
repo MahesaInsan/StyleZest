@@ -7,7 +7,7 @@
     </div>
 @endif
 
-<form action="/admin/addcategory" method="post" enctype="multipart/form-data">
+<form action="/admin/addcategory" method="post" enctype="multipart/form-data" style="font-size: 1.15rem">
     @csrf
     <div class="header">
         <h4 class="modal-title">{{ __('Add New Category') }}</h4>

@@ -1,7 +1,7 @@
 @extends('layouts.box')
     
 @section('box-content')
-<form action="/admin/editcustomizeweb/{{$custom->id}}" method="post" enctype="multipart/form-data">
+<form action="/admin/editcustomizeweb/{{$custom->id}}" method="post" enctype="multipart/form-data" style="font-size: 1.15rem">
     @csrf
     @method('put')
     <div class="header">

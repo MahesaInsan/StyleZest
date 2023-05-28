@@ -2,7 +2,7 @@
     
 @section('box-content')
 
-<form action="/admin/editgenders/{{$gender->id}}" method="post" enctype="multipart/form-data">
+<form action="/admin/editgenders/{{$gender->id}}" method="post" enctype="multipart/form-data" style="font-size: 1.15rem">
     @csrf
     @method('put')
     <div class="header">

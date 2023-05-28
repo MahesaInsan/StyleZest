@@ -1,7 +1,7 @@
 @extends('layouts.box')
     
 @section('box-content')
-<form action="/admin/addclothes" method="post" enctype="multipart/form-data">
+<form action="/admin/addclothes" method="post" enctype="multipart/form-data" style="font-size: 1.15rem">
     @csrf
     <div class="header">
         <h4 class="modal-title">{{ __('Add New Clothes') }}</h4>

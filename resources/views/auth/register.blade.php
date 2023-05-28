@@ -19,7 +19,7 @@
         <div class="row justify-content-center align-content-center h-100">
             <div class="col-lg-6 col-sm-9 h-100 d-flex">
                 <div class="card flex-grow-1 d-flex flex-column justify-content-center shadow" style="background-color: white;">
-                    <div class="card-body d-flex flex-column justify-content-center">
+                    <div class="card-body d-flex flex-column justify-content-evenly">
                         <div class="d-flex flex-column justify-content-center align-items-center mb-2">
                             <img class="w-50 mb-2" src="{{ asset('storage/images/customs/' . $custom->logo) }}" alt="" style="object-fit: cover">
                         </div>
@@ -87,14 +87,11 @@
                                         <span>Already have an account? <a href="{{ route('login') }}" style="color:black">Login</a></span>
                                     </div>
                                     <div class="col-md-6 offset-md-3">
-                                        <button type="submit" class="btn btn-secondary d-flex w-100 justify-content-center text-light" style="background-color:{{$custom->buttoncolor}}">
+                                        <button type="submit" class="btn d-flex w-100 justify-content-center text-light" style="background-color:{{$custom->buttoncolor}}">
                                             {{ __('Register') }}
                                         </button>
                                     </div>
                                 </div>
-                            </div>
-                            <div class="row pt-2">
-                                
                             </div>
                         </form>
                     </div>

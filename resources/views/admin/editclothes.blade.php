@@ -1,7 +1,7 @@
 @extends('layouts.box')
     
 @section('box-content')
-<form action="/admin/editclothes/{{$clothes->id}}" method="post" enctype="multipart/form-data">
+<form action="/admin/editclothes/{{$clothes->id}}" method="post" enctype="multipart/form-data" style="font-size: 1.15rem">
     @csrf
     @method('put')
     <div class="header">
