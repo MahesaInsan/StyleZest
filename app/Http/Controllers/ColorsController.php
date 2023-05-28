@@ -12,7 +12,7 @@ class ColorsController extends Controller
         $colors = color::all();
         $custom = Custom::first();
 
-        return view('admin.colorindex', ['colors' => $colors]);
+        return view('admin.colorindex', ['colors' => $colors, 'custom' => $custom]);
     }    
 
     public function addColors(){

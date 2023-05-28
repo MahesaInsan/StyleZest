@@ -79,8 +79,9 @@ class HomeController extends Controller
     public function showsize()
     {
         $sizes = Size::all();
+        $custom = Custom::first();
         
-        return view('admin.sizeindex', ['sizes' => $sizes]);
+        return view('admin.sizeindex', ['sizes' => $sizes, 'custom' => $custom]);
     }
 
     public function adminColor()

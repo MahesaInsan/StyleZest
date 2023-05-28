@@ -17,7 +17,6 @@
             <p class=" mb-1">Gender :</p>
             <input type="text" name="genderName" id="" class="form-control" required>
         </div>
-        </div>
         
         <input type="submit" class="btn btn-success" value="Add Gender">
     </div>

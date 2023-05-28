@@ -3,6 +3,7 @@
 use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
+use App\Models\Custom;
 
 return new class extends Migration
 {
@@ -24,6 +25,17 @@ return new class extends Migration
             $table->string('bannerimg');
             $table->string('loginimg');
         });
+
+        Custom::insert([
+            'company' => 'Company Name',
+            'maincolor' => '#FFFFFF',
+            'bgcolor' => '#FFFFFF',
+            'sidebar' => '#FFFFFF',
+            'buttoncolor' => '#0000FF',
+            'logo' => 'init',
+            'bannerimg' => 'init',
+            'loginimg' => 'init'
+        ]);
     }
 
     /**

@@ -18,7 +18,7 @@
             <input type="text" name="sizeDesc" id="" class="form-control" value="{{$size->sizeDesc}}">
         </div>
         
-        <input type="submit" class="button" value="Save Changes">
+        <input type="submit" class="btn btn-success" value="Save Changes">
     </div>
 </form>
 @endsection
